@@ -1,0 +1,53 @@
+{\rtf1\ansi\ansicpg1252\cocoartf1504\cocoasubrtf600
+{\fonttbl\f0\fswiss\fcharset0 Helvetica;\f1\fnil\fcharset134 PingFangSC-Regular;\f2\fnil\fcharset0 LucidaGrande;
+\f3\fnil\fcharset0 Georgia;}
+{\colortbl;\red255\green255\blue255;\red255\green0\blue0;\red71\green71\blue71;}
+{\*\expandedcolortbl;\csgray\c100000;\csgenericrgb\c100000\c0\c0;\cssrgb\c34902\c34902\c34902;}
+{\*\listtable{\list\listtemplateid1\listhybrid{\listlevel\levelnfc23\levelnfcn23\leveljc0\leveljcn0\levelfollow0\levelstartat1\levelspace360\levelindent0{\*\levelmarker \{none\}}{\leveltext\leveltemplateid1\'00;}{\levelnumbers;}\fi-360\li720\lin720 }{\listlevel\levelnfc23\levelnfcn23\leveljc0\leveljcn0\levelfollow0\levelstartat1\levelspace360\levelindent0{\*\levelmarker \{hyphen\}}{\leveltext\leveltemplateid2\'01\uc0\u8259 ;}{\levelnumbers;}\fi-360\li1440\lin1440 }{\listname ;}\listid1}}
+{\*\listoverridetable{\listoverride\listid1\listoverridecount0\ls1}}
+\paperw11900\paperh16840\margl1440\margr1440\vieww10800\viewh8400\viewkind0
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\qc\partightenfactor0
+
+\f0\fs28 \cf0 Method Swizzling\
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\qc\partightenfactor0
+
+\fs24 \cf0 {{\NeXTGraphic Screen Shot 2017-04-24 at 1.33.42 PM.png \width4500 \height2960
+}¬}\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\qc\partightenfactor0
+
+\fs28 \cf0 \
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
+\cf0 +load & +initialize\
+
+\f1\fs24 \'c7\'f8\'b1\'f0
+\f0 \
+	+load		
+\f1 \'d4\'da\'d2\'bb\'b8\'f6\'c0\'e0\'b3\'f5\'ca\'bc\'d7\'b0\'d4\'d8\'ca\'b1\'b5\'f7\'d3\'c3\
+	+initialize	\'d4\'da\'d3\'a6\'d3\'c3\'b5\'da\'d2\'bb\'b4\'ce\'b5\'f7\'d3\'c3\'b8\'c3\'c0\'e0\'b5\'c4\'c0\'e0\'b7\'bd\'b7\'a8\'bb\'f2\'ca\'b5\'c1\'a6\'b7\'bd\'b7\'a8\'ca\'b1\'b5\'f7\'d3\'c3\
+\'cf\'e0\'cd\'ac\'b5\'e3\
+	\'b6\'bc\'ca\'c7\'bf\'c9\'d1\'a1\'b5\'c4\'a3\'ac\'c7\'d2\'d6\'bb\'d4\'da\'b1\'bb\'ca\'b5\'cf\'d6\'b5\'c4\'c7\'e9\'bf\'f6\'cf\'c2\'b1\'bb\'b5\'f7\'d3\'c3
+\f0 \
+swizzling 
+\f1 \'d3\'a6\'d6\'bb\'d4\'da
+\f0 +load
+\f1 \'d6\'d0\'cd\'ea\'b3\'c9\
+\cf2 \'c8\'e7\'b9\'fb\'d4\'da+load\'d6\'d0\'ca\'b9\'d3\'c3Method swizzling \'d4\'f2\'c0\'e0\'b1\'bb\'d7\'b0\'d4\'d8\'b5\'c4\'ca\'b1\'ba\'f2\'b7\'bd\'b7\'a8\'d6\'c3\'bb\'bb\'a1\'a3\'d2\'b2\'be\'cd\'ca\'c7\'c8\'ab\'be\'d6\'b5\'c4\'d6\'c3\'bb\'bb\cf0 \
+
+\f0\fs28 \
+Selectors, Methods, & Implementations\
+\
+\pard\tx940\tx1440\pardeftab720\li1440\fi-1440\sl440\sa400\partightenfactor0
+
+\f2\fs24 \cf0 	\uc0\u8259 
+\f1 	Selector\'a3\'a8typedef struct objc_selector *SEL\'a3\'a9:\'d4\'da\'d4\'cb\'d0\'d0\'ca\'b1 Selectors \'d3\'c3\'c0\'b4\'b4\'fa\'b1\'ed\'d2\'bb\'b8\'f6\'b7\'bd\'b7\'a8\'b5\'c4\'c3\'fb\'d7\'d6\'a1\'a3Selector \'ca\'c7\'d2\'bb\'b8\'f6\'d4\'da\'d4\'cb\'d0\'d0\'ca\'b1\'b1\'bb\'d7\'a2\'b2\'e1\'a3\'a8\'bb\'f2\'d3\'b3\'c9\'e4\'a3\'a9\'b5\'c4C\'c0\'e0\'d0\'cd\'d7\'d6\'b7\'fb\'b4\'ae\'a1\'a3Selector\'d3\'c9\'b1\'e0\'d2\'eb\'c6\'f7\'b2\'fa\'c9\'fa\'b2\'a2\'c7\'d2\'d4\'da\'b5\'b1\'c0\'e0\'b1\'bb\'bc\'d3\'d4\'d8\'bd\'f8\'c4\'da\'b4\'e6\'ca\'b1\'d3\'c9\'d4\'cb\'d0\'d0\'ca\'b1\'d7\'d4\'b6\'af\'bd\'f8\'d0\'d0\'c3\'fb\'d7\'d6\'ba\'cd\'ca\'b5\'cf\'d6\'b5\'c4\'d3\'b3\'c9\'e4\'a1\'a3\
+\pard\tx940\tx1440\pardeftab720\li1440\fi-1440\sl440\sa400\partightenfactor0
+\ls1\ilvl1\cf0 {\listtext	
+\f2 \uc0\u8259 
+\f1 	}Method\'a3\'a8typedef struct objc_method *Method\'a3\'a9:\'b7\'bd\'b7\'a8\'ca\'c7\'d2\'bb\'b8\'f6\'b2\'bb\'cd\'b8\'c3\'f7\'b5\'c4\'d3\'c3\'c0\'b4\'b4\'fa\'b1\'ed\'d2\'bb\'b8\'f6\'b7\'bd\'b7\'a8\'b5\'c4\'b6\'a8\'d2\'e5\'b5\'c4\'c0\'e0\'d0\'cd\'a1\'a3\
+{\listtext	
+\f2 \uc0\u8259 
+\f1 	}Implementation\'a3\'a8typedef id (*IMP)(id, SEL,...)\'a3\'a9:\'d5\'e2\'b8\'f6\'ca\'fd\'be\'dd\'c0\'e0\'d0\'cd\'d6\'b8\'cf\'f2\'d2\'bb\'b8\'f6\'b7\'bd\'b7\'a8\'b5\'c4\'ca\'b5\'cf\'d6\'b5\'c4\'d7\'ee\'bf\'aa\'ca\'bc\'b5\'c4\'b5\'d8\'b7\'bd\'a1\'a3\'b8\'c3\'b7\'bd\'b7\'a8\'ce\'aa\'b5\'b1\'c7\'b0CPU\'bc\'dc\'b9\'b9\'ca\'b9\'d3\'c3\'b1\'ea\'d7\'bc\'b5\'c4C\'b7\'bd\'b7\'a8\'b5\'f7\'d3\'c3\'c0\'b4\'ca\'b5\'cf\'d6\'a1\'a3\'b8\'c3\'b7\'bd\'b7\'a8\'b5\'c4\'b5\'da\'d2\'bb\'b8\'f6\'b2\'ce\'ca\'fd\'d6\'b8\'cf\'f2\'b5\'f7\'d3\'c3\'b7\'bd\'b7\'a8\'b5\'c4\'d7\'d4\'c9\'ed\'a3\'a8\'bc\'b4\'c4\'da\'b4\'e6\'d6\'d0\'c0\'e0\'b5\'c4\'ca\'b5\'c0\'fd\'b6\'d4\'cf\'f3\'a3\'ac\'c8\'f4\'ca\'c7\'b5\'f7\'d3\'c3\'c0\'e0\'b7\'bd\'b7\'a8\'a3\'ac\'b8\'c3\'d6\'b8\'d5\'eb\'d4\'f2\'ca\'c7\'d6\'b8\'cf\'f2\'d4\'aa\'c0\'e0\'b6\'d4\'cf\'f3metaclass\'a3\'a9\'a1\'a3\'b5\'da\'b6\'fe\'b8\'f6\'b2\'ce\'ca\'fd\'ca\'c7\'d5\'e2\'b8\'f6\'b7\'bd\'b7\'a8\'b5\'c4\'c3\'fb\'d7\'d6selector\'a3\'ac\'b8\'c3\'b7\'bd\'b7\'a8\'b5\'c4\'d5\'e6\'d5\'fd\'b2\'ce\'ca\'fd\'bd\'f4\'cb\'e6\'c6\'e4\'ba\'f3\'a1\'a3\
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
+
+\f3\fs40 \cf3 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec3 \
+}
