@@ -37,8 +37,11 @@
 \fs28 \cf0 \'b8\'fc\'b8\'c4\'d7\'b4\'cc\'ac\'c0\'b8\
 \pard\tx494\pardeftab494\pardirnatural\partightenfactor0
 
-\f1\fs20 \cf2 \cb3 \CocoaLigature0     \cf5 UIView\cf2  *statusBar = [[[\cf5 UIApplication\cf2  \cf5 sharedApplication\cf2 ] \cf5 valueForKey\cf2 :\cf9 \cb3 @"statusBarWindow"\cf2 \cb3 ] \cf5 valueForKey\cf2 :\cf9 \cb3 @"statusBar"\cf2 \cb3 ];\
+\f1\fs20 \cf2 \cb3 \CocoaLigature0     \cf5 UIView\cf2  *statusBar = [[[\cf5 UIApplication\cf2  \cf5 sharedApplication\cf2 ] \cf5 valueForKey\cf2 :\cf9 @"statusBarWindow"\cf2 ] \cf5 valueForKey\cf2 :\cf9 @"statusBar"\cf2 ];\
     \cf4 if\cf2  ([statusBar \cf5 respondsToSelector\cf2 :\cf4 @selector\cf2 (setBackgroundColor:)]) \{\
         statusBar.\cf5 backgroundColor\cf2  = [\cf5 UIColor\cf2  \cf5 blackColor\cf2 ];\
     \}\
-    [[\cf5 UIApplication\cf2  \cf5 sharedApplication\cf2 ] \cf5 setStatusBarStyle\cf2 :\cf5 UIStatusBarStyleLightContent\cf2 ];}
+    [[\cf5 UIApplication\cf2  \cf5 sharedApplication\cf2 ] \cf5 setStatusBarStyle\cf2 :\cf5 UIStatusBarStyleLightContent\cf2 ];\
+\pard\tx494\pardeftab494\pardirnatural\qc\partightenfactor0
+
+\f0\fs28 \cf0 \cb2 \CocoaLigature1 \'b8\'fc\'b8\'c4\'d7\'b4\'cc\'ac\'c0\'b8}
