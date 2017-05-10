@@ -1,0 +1,68 @@
+
+			//使用root用户登陆
+[root@iZwz9g60mbrgzg39lzeerlZ ~]# mysql -u root -p
+
+			//展示数据库
+MySQL [(none)]> show databases
+    -> ;
++--------------------+
+| Database           |
++--------------------+
+| information_schema |
+| awesome            |
+| mysql              |
+| performance_schema |
+| wordpress          |
++--------------------+
+5 rows in set (0.00 sec)
+
+
+			//展示所有用户
+MySQL [mysql]> SELECT * mysql.user
+    -> ;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'mysql.user' at line 1
+MySQL [mysql]> SELECT host,user from mysql.user;
++-----------+-----------+
+| host      | user      |
++-----------+-----------+
+| 127.0.0.1 | root      |
+| localhost | root      |
+| localhost | wordpress |
++-----------+-----------+
+3 rows in set (0.00 sec)
+
+			//添加用户
+MySQL [(none)]> CREATE user 'clbMacBookPro'@'%' IDENTIFIED BY 'clbMacBookPro';
+Query OK, 0 rows affected (0.00 sec)
+
+//展示所有用户
+MySQL [(none)]> SELECT host,user from mysql.user
+    -> ;
++-----------+---------------+
+| host      | user          |
++-----------+---------------+
+| %         | clbMacBookPro |
+| 127.0.0.1 | root          |
+| localhost | root          |
+| localhost | wordpress     |
++-----------+---------------+
+4 rows in set (0.00 sec)
+
+			//host的意义
+% 		任意IP
+localhost	本机IP
+127.0.0.1
+::1		127.0.0.1的Ipv6格式
+
+			//展示某用户权限
+MySQL [(none)]> SHOW grants for clbMacBookPro;
++--------------------------------------------------------------------------------------------------------------+
+| Grants for clbMacBookPro@%                                                                                   |
++--------------------------------------------------------------------------------------------------------------+
+| GRANT USAGE ON *.* TO 'clbMacBookPro'@'%' IDENTIFIED BY PASSWORD '*447AAE4AF3D08D2DDF419CBA7B04785F75344B22' |
++--------------------------------------------------------------------------------------------------------------+
+1 row in set (0.00 sec)
+
+			//授予权限
+MySQL [(none)]> GRANT all privileges ON awesome.* TO 'clbMacBookPro'@'%';
+Query OK, 0 rows affected (0.00 sec)
