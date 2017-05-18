@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dataSource name="MySQL - awesome@120.25.247.186">
+  <database-model serializer="dbm" rdbms="MYSQL" format-version="2.6">
+    <schema id="1" name="awesome">
+      <visible>1</visible>
+    </schema>
+    <schema id="2" name="information_schema"/>
+    <table id="3" parent="1" name="wordList"/>
+    <column id="4" parent="3" name="word">
+      <data-type>char(255)|0</data-type>
+    </column>
+    <column id="5" parent="3" name="chinese">
+      <data-type>varchar(255)|0</data-type>
+    </column>
+    <column id="6" parent="3" name="aPhoneticSymbol">
+      <data-type>char(255)|0</data-type>
+    </column>
+    <column id="7" parent="3" name="note">
+      <data-type>text|0</data-type>
+    </column>
+  </database-model>
+</dataSource>

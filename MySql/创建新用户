@@ -18,9 +18,6 @@ MySQL [(none)]> show databases
 
 
 			//展示所有用户
-MySQL [mysql]> SELECT * mysql.user
-    -> ;
-ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'mysql.user' at line 1
 MySQL [mysql]> SELECT host,user from mysql.user;
 +-----------+-----------+
 | host      | user      |
@@ -66,3 +63,40 @@ MySQL [(none)]> SHOW grants for clbMacBookPro;
 			//授予权限
 MySQL [(none)]> GRANT all privileges ON awesome.* TO 'clbMacBookPro'@'%';
 Query OK, 0 rows affected (0.00 sec)
+
+			//是配置生效
+MySQL [(none)]> FLUSH PRIVILEGES;
+Query OK, 0 rows affected (0.00 sec)
+
+			//产看端口号
+MySQL [(none)]> show global variables like 'port'
+    -> ;
++---------------+-------+
+| Variable_name | Value |
++---------------+-------+
+| port          | 3306  |
++---------------+-------+
+1 row in set (0.00 sec)
+
+			//查询数据表
+MySQL [(none)]> USE awesome
+Database changed
+MySQL [awesome]> SHOW tables
+    -> ;
++-------------------+
+| Tables_in_awesome |
++-------------------+
+| wordList          |
++-------------------+
+1 row in set (0.00 sec)
+			//查询表结构
+MySQL [awesome]> SHOW columns FROM wordList;
++-----------------+--------------+------+-----+---------+-------+
+| Field           | Type         | Null | Key | Default | Extra |
++-----------------+--------------+------+-----+---------+-------+
+| word            | char(255)    | YES  |     | NULL    |       |
+| chinese         | varchar(255) | YES  |     | NULL    |       |
+| aPhoneticSymbol | char(255)    | YES  |     | NULL    |       |
+| note            | text         | YES  |     | NULL    |       |
++-----------------+--------------+------+-----+---------+-------+
+4 rows in set (0.00 sec)
