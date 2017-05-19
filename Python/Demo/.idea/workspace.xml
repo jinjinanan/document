@@ -65,7 +65,7 @@
         <entry file="file://$PROJECT_DIR$/Library/StudyPyMysql.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="45">
-              <caret line="3" column="11" selection-start-line="3" selection-start-column="11" selection-end-line="3" selection-end-column="11" />
+              <caret line="3" column="14" selection-start-line="3" selection-start-column="7" selection-end-line="3" selection-end-column="14" />
               <folding>
                 <marker date="1495156172000" expanded="true" signature="737:836" ph="INSERT INTO wordList... " />
                 <marker date="1495156172000" expanded="true" signature="1011:1033" ph="SELECT * FRO... wordList" />
@@ -944,6 +944,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="251">
           <caret line="35" column="22" selection-start-line="35" selection-start-column="6" selection-end-line="35" selection-end-column="22" />
+          <folding>
+            <element signature="e#0#13#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -1009,7 +1012,7 @@
     <entry file="file://$PROJECT_DIR$/Library/StudyPyMysql.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="45">
-          <caret line="3" column="11" selection-start-line="3" selection-start-column="11" selection-end-line="3" selection-end-column="11" />
+          <caret line="3" column="14" selection-start-line="3" selection-start-column="7" selection-end-line="3" selection-end-column="14" />
           <folding>
             <marker date="1495156172000" expanded="true" signature="737:836" ph="INSERT INTO wordList... " />
             <marker date="1495156172000" expanded="true" signature="1011:1033" ph="SELECT * FRO... wordList" />
