@@ -48,9 +48,9 @@ def main():
     cursor,conn = connect()
     if cursor :
         print('进入')
-        insert(cursor,'once','一旦；曾经','wʌns','')
+        # insert(cursor,'once','一旦；曾经','wʌns','')
         query(cursor)
-        delect(cursor,'once')
+        # delect(cursor,'dialect')
     # 提交，不然无法保存新建或者修改的数据
     conn.commit()
 

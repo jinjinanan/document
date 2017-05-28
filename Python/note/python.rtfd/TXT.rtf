@@ -1,15 +1,15 @@
 {\rtf1\ansi\ansicpg1252\cocoartf1504\cocoasubrtf600
 {\fonttbl\f0\fnil\fcharset134 PingFangSC-Regular;\f1\fnil\fcharset0 Menlo-Regular;\f2\fswiss\fcharset0 Helvetica;
 \f3\fmodern\fcharset0 Courier;\f4\fmodern\fcharset0 Courier-Oblique;\f5\fnil\fcharset0 HelveticaNeue;
-\f6\fmodern\fcharset0 Courier-Bold;}
+\f6\fmodern\fcharset0 Courier-Bold;\f7\froman\fcharset0 Times-Roman;}
 {\colortbl;\red255\green255\blue255;\red52\green52\blue52;\red249\green249\blue249;\red255\green255\blue255;
 \red135\green136\blue117;\red83\green83\blue83;\red213\green213\blue213;\red255\green255\blue255;\red0\green0\blue0;
 \red17\green137\blue135;\red38\green38\blue38;\red210\green0\blue53;\red210\green0\blue68;\red133\green0\blue96;
-\red255\green0\blue0;\red255\green255\blue255;}
+\red255\green0\blue0;\red255\green255\blue255;\red0\green0\blue0;}
 {\*\expandedcolortbl;\csgray\c100000;\cssrgb\c26667\c26667\c26667;\cssrgb\c98039\c98039\c98039;\csgray\c100000;
 \cssrgb\c60000\c60000\c53333;\cssrgb\c40000\c40000\c40000;\cssrgb\c86667\c86667\c86667;\cssrgb\c100000\c100000\c100000;\csgray\c0;
 \cssrgb\c0\c60000\c60000;\cssrgb\c20000\c20000\c20000;\cssrgb\c86667\c6667\c26667;\cssrgb\c86667\c0\c33333;\cssrgb\c60000\c0\c45098;
-\csgenericrgb\c100000\c0\c0;\csgenericrgb\c100000\c100000\c100000;}
+\csgenericrgb\c100000\c0\c0;\csgenericrgb\c100000\c100000\c100000;\cssrgb\c0\c0\c0;}
 \paperw11900\paperh16840\margl1440\margr1440\vieww17580\viewh8400\viewkind0
 \pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\qc\partightenfactor0
 
@@ -313,18 +313,49 @@ print(L[0:3])
 \b0 \
 \pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardeftab720\pardirnatural\partightenfactor0
 \cf0 __all__			\'b6\'a8\'d2\'e5\'c1\'cb\'b4\'cbmodule\'b1\'bb\'c6\'e4\'cb\'fbmodule\'d2\'fb\'d3\'c3\'ca\'b1\'b5\'bc\'c8\'eb\'b5\'c4\'b1\'e4\'c1\'bf\
-\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardeftab720\pardirnatural\partightenfactor0
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardeftab720\pardirnatural\qc\partightenfactor0
 
-\b \cf0 \
-\
-\
-\
-\
-\
-\
-\
-\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardeftab720\pardirnatural\partightenfactor0
+\b \cf0 \'ce\'c4\'bc\'fe\'d7\'e9\'d6\'af\'d0\'ce\'ca\'bd\
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
 
-\f5\b0\fs32 \cf2 \cb8 \expnd0\expndtw0\kerning0
+\f2\b0 \cf0 {{\NeXTGraphic 0_1290650830WZhm.png \width11780 \height12040
+}¬}\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
+
+\f0\b \cf0 \
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardeftab720\pardirnatural\qc\partightenfactor0
+\cf0 \'b2\'e9\'bf\'b4\'d7\'d6\'b6\'ce\'b1\'e0\'c2\'eb\
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural\partightenfactor0
+
+\f1\b0\fs22 \cf9 \CocoaLigature0 MySQL [awesome]> SHOW FULL COLUMNS FROM wordList;\
++-----------------+--------------+--------------------+------+-----+---------+-------+---------------------------------+---------+\
+| Field           | Type         | Collation          | Null | Key | Default | Extra | Privileges                      | Comment |\
++-----------------+--------------+--------------------+------+-----+---------+-------+---------------------------------+---------+\
+| word            | char(255)    | utf8mb4_general_ci | YES  |     | NULL    |       | select,insert,update,references |         |\
+| chinese         | varchar(255) | utf8mb4_general_ci | YES  |     | NULL    |       | select,insert,update,references |         |\
+| aPhoneticSymbol | char(255)    | utf8mb4_general_ci | YES  |     | NULL    |       | select,insert,update,references |         |\
+| note            | text         | utf8mb4_general_ci | YES  |     | NULL    |       | select,insert,update,references |         |\
++-----------------+--------------+--------------------+------+-----+---------+-------+---------------------------------+---------+\
+4 rows in set (0.00 sec)\
+\pard\pardeftab720\sl340\partightenfactor0
+
+\f0\fs24 \cf0 \CocoaLigature1 utf8mb4\'d3\'ebutf8\'b5\'c4\'b1\'c8\'bd\'cf\'a3\'ba\
+	utf8mb4\'b1\'c8\'b6\'e0\'c1\'cbemjoy\'b5\'c4\'d6\'a7\'b3\'d6
+\f5\fs32 \cf2 \cb8 \expnd0\expndtw0\kerning0
+\
+\pard\pardeftab720\sl340\qc\partightenfactor0
+
+\f0\b\fs24 \cf0 \cb4 \kerning1\expnd0\expndtw0 \'cd\'f8\'c2\'e7\
+\pard\pardeftab720\sl340\sa240\partightenfactor0
+
+\b0 \cf0 AF_UNIX \'d3\'d6\'c3\'fbAF_LOCAL \
+AF_INET \'a3\'ba\'bb\'f9\'d3\'da\'cd\'f8\'c2\'e7\
+\pard\pardeftab720\sl420\sa240\partightenfactor0
+\cf0 \'d3\'d0\'d0\'a7\'b5\'c4\'b6\'cb\'bf\'da\'ba\'c5\'b7\'b6\'ce\'a7\'ce\'aa 0~65535 \'d5\'bc\'d3\'c3\'b6\'cb\'bf\'da\'ba\'c5\'a3\'bahttp://www.iana.org/assignments/port-numbers
+\f7 \cf17 \cb1 \expnd0\expndtw0\kerning0
+\
+\
+\pard\pardeftab720\sl340\sa240\partightenfactor0
+\cf17 \
+\
 \
 }

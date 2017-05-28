@@ -9,11 +9,11 @@ import time
 
 
 # s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-
+#
 # s.connect(('www.sina.com.cn', 80))
-
+#
 # s.send(b'GET / HTTP/1.1\r\nHost: www.sina.com.cn\r\nConnection: close\r\n\r\n')
-
+#
 # buffer = []
 # while True:
 # 	d = s.recv(1024)
@@ -69,7 +69,7 @@ import time
 
 # -------------------------------- TCP服务端 ----------------------------------  
 
-#!/usr/bin/env python3
+# !/usr/bin/env python3
 # -*- coding: utf-8 -*-
 
 def tcplink(sock, addr):
@@ -78,7 +78,7 @@ def tcplink(sock, addr):
     while True:
         data = sock.recv(1024)
         time.sleep(1)
-        if not data or dta.decode('utf-8') == 'exit':
+        if not data or data.decode('utf-8') == 'exit':
             break
         sock.send(('Hello, %s!' % data.decode('utf-8')).encode('utf-8'))
     sock.close()
