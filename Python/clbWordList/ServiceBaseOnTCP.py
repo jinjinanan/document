@@ -17,6 +17,13 @@ ADDR = (HOST,PORT)
 #函数定义
 def createS(addr = ADDR,number = NUMBER):
     s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+    """
+    address already in use
+    这个是由于你的服务端仍然存在四次挥手的time_wait状态在占用地址
+    （如果不懂，请深入研究1.tcp三次握手，四次挥手 2.syn洪水攻击 3.服务器高并发情况下会有大量的time_wait状态的优化方法）。
+    """
+    s.setsockopt(socket.SOL_SOCKET,socket.SO_REUSEADDR,1)
+
     s.bind(ADDR)
     s.listen(number)
     return s

@@ -5,18 +5,22 @@
 {\colortbl;\red255\green255\blue255;\red52\green52\blue52;\red249\green249\blue249;\red255\green255\blue255;
 \red135\green136\blue117;\red83\green83\blue83;\red213\green213\blue213;\red255\green255\blue255;\red0\green0\blue0;
 \red17\green137\blue135;\red38\green38\blue38;\red210\green0\blue53;\red210\green0\blue68;\red133\green0\blue96;
-\red255\green0\blue0;\red255\green255\blue255;\red0\green0\blue0;}
+\red133\green0\blue2;\red52\green52\blue52;\red249\green249\blue249;\red38\green38\blue38;\red17\green137\blue135;
+\red255\green0\blue0;\red255\green255\blue255;\red14\green114\blue164;\red0\green0\blue109;\red0\green0\blue0;
+}
 {\*\expandedcolortbl;\csgray\c100000;\cssrgb\c26667\c26667\c26667;\cssrgb\c98039\c98039\c98039;\csgray\c100000;
 \cssrgb\c60000\c60000\c53333;\cssrgb\c40000\c40000\c40000;\cssrgb\c86667\c86667\c86667;\cssrgb\c100000\c100000\c100000;\csgray\c0;
 \cssrgb\c0\c60000\c60000;\cssrgb\c20000\c20000\c20000;\cssrgb\c86667\c6667\c26667;\cssrgb\c86667\c0\c33333;\cssrgb\c60000\c0\c45098;
-\csgenericrgb\c100000\c0\c0;\csgenericrgb\c100000\c100000\c100000;\cssrgb\c0\c0\c0;}
-\paperw11900\paperh16840\margl1440\margr1440\vieww17580\viewh8400\viewkind0
+\cssrgb\c60000\c0\c0;\cssrgb\c26667\c26667\c26667;\cssrgb\c98039\c98039\c98039;\cssrgb\c20000\c20000\c20000;\cssrgb\c0\c60000\c60000;
+\csgenericrgb\c100000\c0\c0;\csgenericrgb\c100000\c100000\c100000;\cssrgb\c0\c52549\c70196;\cssrgb\c0\c0\c50196;\cssrgb\c0\c0\c0;
+}
+\paperw11900\paperh16840\margl1440\margr1440\vieww17580\viewh16580\viewkind0
 \pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\qc\partightenfactor0
 
 \f0\b\fs32 \cf0 \'bf\'e2
 \b0\fs24 \
 \pard\pardeftab720\sl280\partightenfactor0
-\cf0 asyncio\
+\cf0 asyncio			\'d6\'b1\'bd\'d3\'c4\'da\'d6\'c3\'c1\'cb\'b6\'d4\'d2\'ec\'b2\'bdIO\'b5\'c4\'d6\'a7\'b3\'d6\
 \pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
 \cf0 threading\
 wsgiref\
@@ -275,11 +279,121 @@ print(L[0:3])
 \'b9\'d8\'bc\'fc\'d7\'d6\'b2\'ce\'ca\'fd				def  person(name, age, **kw): 			\'b9\'d8\'bc\'fc\'d7\'d6\'b2\'ce\'ca\'fd\'d4\'da\'ba\'af\'ca\'fd\'c4\'da\'b2\'bf\'d7\'d4\'b6\'af\'b7\'e2\'d7\'b0\'ce\'aa\'d2\'bb\'b8\'f6dict\
 \'c3\'fc\'c3\'fb\'b9\'d8\'bc\'fc\'d7\'d6\'b2\'ce\'ca\'fd				def	person(name, age, *, city, job):		\'c3\'fc\'c3\'fb\'b9\'d8\'bc\'fc\'d7\'d6\'b2\'ce\'ca\'fd\'d0\'e8\'d2\'aa * \'b7\'d6\'b8\'ee\'a3\'ac\'ba\'f3\'c3\'e6\'b5\'c4\'b2\'ce\'ca\'fd\'b1\'bb\'ca\'d3\'ce\'aa\'c3\'fc\'c3\'fb\'b9\'d8\'bc\'fc\'d7\'d6\'b2\'ce\'ca\'fd\'a3\'bb\
 						def person(name, age, args, city, job):		\'c8\'e7\'b9\'fb\'d2\'d1\'be\'ad\'d3\'d0\'d2\'bb\'b8\'f6\'bf\'c9\'b1\'e4\'b2\'ce\'ca\'fd\'a3\'ac\'ba\'f3\'c3\'e6\'b5\'c4\'c3\'fc\'c3\'fb\'b2\'ce\'ca\'fd\'b2\'bb\'d4\'d9\'d0\'e8\'d2\'aa*\
-						def person(name, age, *, city = \'a1\'aebeiing\'a1\'af, job):	\'c3\'fc\'c3\'fb\'b9\'d8\'bc\'fc\'d7\'d6\'b2\'ce\'ca\'fd\'bf\'c9\'d2\'d4\'d3\'c3\'c4\'ac\'c8\'cf\'d6\'b5				\
-\
+						def person(name, age, *, city = \'a1\'aebeiing\'a1\'af, job):	\'c3\'fc\'c3\'fb\'b9\'d8\'bc\'fc\'d7\'d6\'b2\'ce\'ca\'fd\'bf\'c9\'d2\'d4\'d3\'c3\'c4\'ac\'c8\'cf\'d6\'b5	\
 \pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardeftab720\pardirnatural\qc\partightenfactor0
 
 \b \cf0 \'d7\'b0\'ca\'ce\'c6\'f7\
+\pard\pardeftab720\sl360\partightenfactor0
+
+\f6 \cf11 \cb3 \expnd0\expndtw0\kerning0
+def
+\f3\b0 \cf2  
+\f6\b \cf15 log
+\f3\b0 \cf2 (func):\
+    
+\f6\b \cf11 def
+\f3\b0 \cf2  
+\f6\b \cf15 wrapper
+\f3\b0 \cf2 (*args, **kw):\
+        print(\cf12 'call %s():'\cf2  % func.__name__)\
+        
+\f6\b \cf11 return
+\f3\b0 \cf2  func(*args, **kw)\
+    
+\f6\b \cf11 return
+\f3\b0 \cf2  wrapper\
+\
+@log\
+
+\f6\b \cf11 def
+\f3\b0 \cf2  
+\f6\b \cf15 now
+\f3\b0 \cf2 ():\
+    print(\cf12 '2015-3-25'\cf2 )\
+\
+\pard\pardeftab720\sl360\partightenfactor0
+\cf16 \cb17 \outl0\strokewidth0 \strokec16 >>> now()\
+
+\f6\b \cf18 \strokec18 call
+\f3\b0 \cf16 \strokec16  now():\
+\cf19 \strokec19 2015\cf16 \strokec16 -\cf19 \strokec19 3\cf16 \strokec16 -\cf19 \strokec19 25\cf16 \strokec16 \
+\pard\pardeftab720\sl360\partightenfactor0
+\cf2 \cb3 \outl0\strokewidth0 \
+\pard\pardeftab720\sl320\sa300\partightenfactor0
+
+\f0 \cf0 \cb4 \kerning1\expnd0\expndtw0 \'b0\'d1@log\'b7\'c5\'b5\'bdnow()\'ba\'af\'ca\'fd\'b5\'c4\'b6\'a8\'d2\'e5\'b4\'a6\'a3\'ac\'cf\'e0\'b5\'b1\'d3\'da\'d6\'b4\'d0\'d0\'c1\'cb\'d3\'ef\'be\'e4\'a3\'ba
+\b \cf20 \cb21 now = log(now)
+\b0 \cf0 \cb4 	
+\b \
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardeftab720\pardirnatural\qc\partightenfactor0
+\cf0 \'d0\'ad\'b3\'cc\
+\pard\pardeftab720\sl360\partightenfactor0
+
+\f6 \cf11 \cb3 \expnd0\expndtw0\kerning0
+def
+\f3\b0 \cf2  
+\f6\b \cf15 consumer
+\f3\b0 \cf2 ():\
+    r = \cf12 ''\cf2 \
+    
+\f6\b \cf11 while
+\f3\b0 \cf2  \cf22 True\cf2 :\
+        n = 
+\f6\b \cf11 yield
+\f3\b0 \cf2  r\
+        
+\f6\b \cf11 if
+\f3\b0 \cf2  
+\f6\b \cf11 not
+\f3\b0 \cf2  n:\
+            
+\f6\b \cf11 return
+\f3\b0 \cf2 \
+        print(\cf12 '[CONSUMER] Consuming %s...'\cf2  % n)\
+        r = \cf12 '200 OK'\cf2 \
+\
+
+\f6\b \cf11 def
+\f3\b0 \cf2  
+\f6\b \cf15 produce
+\f3\b0 \cf2 (c):\
+    c.send(\cf22 None\cf2 )\
+    n = \cf10 0\cf2 \
+    
+\f6\b \cf11 while
+\f3\b0 \cf2  n < \cf10 5\cf2 :\
+        n = n + \cf10 1\cf2 \
+        print(\cf12 '[PRODUCER] Producing %s...'\cf2  % n)\
+        r = c.send(n)\
+        print(\cf12 '[PRODUCER] Consumer return: %s'\cf2  % r)\
+    c.close()\
+\
+c = consumer()\
+produce(c)\
+\
+\pard\pardeftab720\sl360\partightenfactor0
+
+\f0\b \cf2 \'d6\'b4\'d0\'d0\'bd\'e1\'b9\'fb
+\f3\b0 \
+[PRODUCER] \cf23 Producing\cf2  1...\
+[CONSUMER] \cf23 Consuming\cf2  1...\
+[PRODUCER] \cf23 Consumer\cf2  \cf23 return\cf2 : 200 \cf23 OK\cf2 \
+[PRODUCER] \cf23 Producing\cf2  2...\
+[CONSUMER] \cf23 Consuming\cf2  2...\
+[PRODUCER] \cf23 Consumer\cf2  \cf23 return\cf2 : 200 \cf23 OK\cf2 \
+[PRODUCER] \cf23 Producing\cf2  3...\
+[CONSUMER] \cf23 Consuming\cf2  3...\
+[PRODUCER] \cf23 Consumer\cf2  \cf23 return\cf2 : 200 \cf23 OK\cf2 \
+[PRODUCER] \cf23 Producing\cf2  4...\
+[CONSUMER] \cf23 Consuming\cf2  4...\
+[PRODUCER] \cf23 Consumer\cf2  \cf23 return\cf2 : 200 \cf23 OK\cf2 \
+[PRODUCER] \cf23 Producing\cf2  5...\
+[CONSUMER] \cf23 Consuming\cf2  5...\
+[PRODUCER] \cf23 Consumer\cf2  \cf23 return\cf2 : 200 \cf23 OK\cf2 \
+\
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardeftab720\pardirnatural\qc\partightenfactor0
+
+\f0\b \cf0 \cb4 \kerning1\expnd0\expndtw0 \
 \'ce\'e5\'d6\'d6IO\'c4\'a3\'d0\'cd\
 \'b6\'d1&\'d5\'bb\
 \pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardeftab720\pardirnatural\partightenfactor0
@@ -293,10 +407,10 @@ print(L[0:3])
 \
 \pard\pardeftab720\sl320\qc\partightenfactor0
 
-\b \cf15 \cb16 \'ce\'aa\'ca\'b2\'c3\'b4\'cf\'df\'b3\'cc\'c7\'d0\'bb\'bb\'d0\'a7\'c2\'ca\'b5\'cd\'a3\'bf\
-\cf0 \cb4 pyhon \'b5\'c4\'cf\'c2\'bb\'ae\'cf\'df\cf15 \cb16 \
+\b \cf20 \cb21 \'ce\'aa\'ca\'b2\'c3\'b4\'cf\'df\'b3\'cc\'c7\'d0\'bb\'bb\'d0\'a7\'c2\'ca\'b5\'cd\'a3\'bf\
+\cf0 \cb4 pyhon \'b5\'c4\'cf\'c2\'bb\'ae\'cf\'df\cf20 \cb21 \
 \pard\pardeftab720\sl320\partightenfactor0
-{\field{\*\fldinst{HYPERLINK "https://segmentfault.com/a/1190000002611411"}}{\fldrslt \cf15 https://segmentfault.com/a/1190000002611411}}\
+{\field{\*\fldinst{HYPERLINK "https://segmentfault.com/a/1190000002611411"}}{\fldrslt \cf20 https://segmentfault.com/a/1190000002611411}}\
 \pard\pardeftab720\sl320\partightenfactor0
 
 \b0 \cf0 \cb4 \'b5\'a5\'cf\'c2\'bb\'ae\'cf\'df\'c7\'b0\'d7\'ba\'b5\'c4\'c3\'fb\'b3\'c6\'a3\'ba	\'cb\'bd\'d3\'d0\'b5\'c4
@@ -351,11 +465,19 @@ print(L[0:3])
 AF_INET \'a3\'ba\'bb\'f9\'d3\'da\'cd\'f8\'c2\'e7\
 \pard\pardeftab720\sl420\sa240\partightenfactor0
 \cf0 \'d3\'d0\'d0\'a7\'b5\'c4\'b6\'cb\'bf\'da\'ba\'c5\'b7\'b6\'ce\'a7\'ce\'aa 0~65535 \'d5\'bc\'d3\'c3\'b6\'cb\'bf\'da\'ba\'c5\'a3\'bahttp://www.iana.org/assignments/port-numbers
-\f7 \cf17 \cb1 \expnd0\expndtw0\kerning0
+\f7 \cf24 \expnd0\expndtw0\kerning0
 \
+\pard\pardeftab720\sl420\sa240\qc\partightenfactor0
+
+\f0\b \cf0 \kerning1\expnd0\expndtw0 TCP\'d3\'a6\'d3\'c3
+\f7\b0 \cf24 \expnd0\expndtw0\kerning0
 \
+\pard\pardeftab720\sl420\sa240\partightenfactor0
+{\field{\*\fldinst{HYPERLINK "http://www.cnblogs.com/hazir/p/python_chat_room.html"}}{\fldrslt \cf24 http://www.cnblogs.com/hazir/p/python_chat_room.html}}\
+\pard\pardeftab720\sl420\sa240\partightenfactor0
+{\field{\*\fldinst{HYPERLINK "http://www.jianshu.com/p/486b0965c296"}}{\fldrslt \cf24 http://www.jianshu.com/p/486b0965c296}}\
 \pard\pardeftab720\sl340\sa240\partightenfactor0
-\cf17 \
+\cf24 \
 \
 \
 }
