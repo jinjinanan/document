@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>User</title>
+</head>
+<body>
+<h1>
+    <!--过滤器名添加在变量名之后，中间使用竖线分隔-->
+    <!--http://jinja.pocoo.org/docs/templates/#builtin-filters 完整的过滤器列表-->
+    用户:
+    {%if name == 'clb'%}
+        Hello {{name|capitalize}}!
+    {%else%}
+        Hello, Stranger!
+    {%endif%}
+
+</h1>
+
+
+
+<h3>jinja支持字典，列表，对象等复杂的数据类型</h3>
+<p>A value from a dictionary: {{ mydict['key'] }}.</p>
+<p>A value from a list: {{ mylist[3] }}.</p>
+<p>A value from a list, with a variable index: {{ mylist[myintvar] }}.</p>
+
+<h3>支持列表循环</h3>
+<ul>
+    {%for i in mylist%}
+    <li>{{i}}</li>
+    {% endfor %}
+</ul>
+
+<h3>支持macro</h3>
+{%import 'macros.html' as macros%}
+<!--{% from 'macros.html' import input %}-->
+<p>{{input('username')}}</p>
+<p>{{input('password','password','password')}}</p>
+
+<p>
+    macro 与block的区别:<br>
+    macro 替换简单重复的代码<br>
+    block 替换重复框架的代码<br>
+
+</p>
+<a  href="http://www.ttlsa.com/python/flask-jinja2-template-engine-block-and-macro/">参考</a>
+
+<h3>继承</h3>
+</body>
+</html>
