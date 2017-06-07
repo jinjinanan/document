@@ -8,6 +8,7 @@ from flask import render_template, session, redirect, url_for,flash
 from flask.ext.wtf import Form
 from wtforms import StringField, SubmitField
 from wtforms.validators import Required
+from wtforms import validators
 from flask.ext.bootstrap import Bootstrap
 
 app = Flask(__name__)
@@ -15,7 +16,7 @@ bootscrap = Bootstrap(app)
 app.config['SECRET_KEY'] = 'hard to guess string'
 
 class NameForm(Form):
-    name = StringField('What is your name?',validators=[Required()])
+    name = StringField('What is your name?',validators=[validators.required()])
     submit = SubmitField('submit')
 
 @app.route('/')

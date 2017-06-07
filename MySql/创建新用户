@@ -1,4 +1,4 @@
-
+ALF
 			//使用root用户登陆
 [root@iZwz9g60mbrgzg39lzeerlZ ~]# mysql -u root -p
 
@@ -108,3 +108,26 @@ MySQL [awesome]> SHOW columns FROM wordList;
 | note            | text         | YES  |     | NULL    |       |
 +-----------------+--------------+------+-----+---------+-------+
 4 rows in set (0.00 sec)
+
+删除表
+MySQL [awesome]> DROP TABLE users;
+Query OK, 0 rows affected (0.01 sec)
+			//创建带主键的表
+CREATE TABLE roles(id int primary key,name varchar(30));
+Query OK, 0 rows affected (0.06 sec)
+			//创建带外键的表
+CREATE TABLE users(id int PRIMARY KEY,
+			username varchar(30),
+			password varchar(30),
+			role_id int,
+			FOREIGN KEY(role_id) REFERENCES roles(id));
+Query OK, 0 rows affected (0.06 sec)
+			//添加自动增长列
+MySQL [awesome]> ALTER TABLE users DROP id;	//先删除
+MySQL [awesome]> ALTER TABLE users ADD id INT NOT NULL PRIMARY KEY AUTO_INCREMENT FIRST;//在添加
+			//删除表外键
+MySQL [awesome]> SHOW CREATE TABLE users;
+MySQL [awesome]> alter table users drop foreign key users_ibfk_1; //users_ibfk_1 通过创建表语句查询 对应的CONSTRAINT值是什么。
+			//创建外键
+MySQL [awesome]> ALTER TABLE users ADD id INT NOT NULL;	//现创建一个新行
+MySQL [awesome]> ALTER TABLE users ADD CONSTRAINT fk_role_id FOREIGN KEY (role_id) REFERENCES roles(id);SHOW CREATE TABLE users;
