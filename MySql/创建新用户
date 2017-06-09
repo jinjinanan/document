@@ -131,3 +131,9 @@ MySQL [awesome]> alter table users drop foreign key users_ibfk_1; //users_ibfk_1
 			//创建外键
 MySQL [awesome]> ALTER TABLE users ADD id INT NOT NULL;	//现创建一个新行
 MySQL [awesome]> ALTER TABLE users ADD CONSTRAINT fk_role_id FOREIGN KEY (role_id) REFERENCES roles(id);SHOW CREATE TABLE users;
+
+
+
+
+
+
