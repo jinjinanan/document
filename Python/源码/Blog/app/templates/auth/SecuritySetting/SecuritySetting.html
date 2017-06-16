@@ -1,0 +1,20 @@
+{% extends "base.html"%}
+
+{%block title%} Security Setting{%endblock%}
+
+{%block page_content%}
+    <div class="page-header">
+        <h1>Security Setting</h1>
+    </div>
+    <div class="col-md-4">
+        <a type = 'button' class="btn btn-primary" href="{{ url_for('auth.ModifyPassWord') }}">修改密码</a>
+        <a type = 'button' class="btn btn-primary" href="{{ url_for('main.index') }}">修改邮箱</a>
+        <a type = 'button' class="btn btn-primary" href="{{ url_for('main.index') }}">忘记密码</a>
+
+
+
+
+    </div>
+
+
+{% endblock %}

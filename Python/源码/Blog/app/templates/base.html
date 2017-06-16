@@ -1,11 +1,11 @@
-{{% extends "bootstrap/base.html" %}
+{% extends "bootstrap/base.html" %}
 
 {% block title %}Flasky{% endblock %}
 
 {% block head %}
 {{ super() }}
-<link rel="shortcut icon" href="{{ url_for('static', filename='favicon.ico') }}" type="image/x-icon">
-<link rel="icon" href="{{ url_for('static', filename='favicon.ico') }}" type="image/x-icon">
+<link rel="shortcut icon" href="{{ url_for('static', filename='clb.png') }}" type="image/x-icon">
+<link rel="icon" href="{{ url_for('static', filename='clb.png') }}" type="image/x-icon">
 {% endblock %}
 
 {% block navbar %}
@@ -25,7 +25,12 @@
                 <li><a href="{{ url_for('main.index') }}">Home</a></li>
             </ul>
             <ul class="nav navbar-nav navbar-right">
+                <!--变量 current_user 由 Flask-Login 定义，且在视图函数和模板中自动可用。
+                这个变量的值是当前登录的用户，
+                如果用户尚未登录，则是一个匿名用户代理对象。
+                如果 是匿名用户，is_authenticated() 方法返回 False-->
                 {% if current_user.is_authenticated %}
+                <li><a href="{{url_for('auth.SecuritySetting')}}">Security Setting</a></li>
                 <li><a href="{{ url_for('auth.logout') }}">Log Out</a></li>
                 {% else %}
                 <li><a href="{{ url_for('auth.login') }}">Log In</a></li>
@@ -38,6 +43,7 @@
 
 {% block content %}
 <div class="container">
+    <!--get_flashed_messages() 获得flash的内容-->
     {% for message in get_flashed_messages() %}
     <div class="alert alert-warning">
         <button type="button" class="close" data-dismiss="alert">&times;</button>
@@ -51,5 +57,5 @@
 
 {% block scripts %}
 {{ super() }}
-{{ moment.include_moment() }}
+
 {% endblock %}

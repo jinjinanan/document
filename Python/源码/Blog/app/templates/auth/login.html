@@ -8,6 +8,13 @@
     <h1>Login</h1>
 </div>
 <div class="col-md-4">
+     <!--Flask-Bootstrap 提供的 wtf.quick_form() 宏渲染表单-->
     {{ wtf.quick_form(form) }}
+    <br>
+    <p>
+        New user?
+        <a href="{{url_for('auth.register')}}">Click here to register</a>
+
+    </p>
 </div>
 {% endblock %}

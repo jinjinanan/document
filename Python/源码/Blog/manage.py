@@ -8,6 +8,7 @@ from flask_script import Manager,Shell
 from flask_migrate import Migrate, MigrateCommand
 
 app = create_app('default')
+app.debug = True            # 你启用了调试支持，服务器会在代码修改后自动重新载入，并在发生 错误时提供一个相当有用的调试器
 manager = Manager(app)
 
 def make_shell_context():
