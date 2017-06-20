@@ -18,6 +18,7 @@ class User(UserMixin,db.Model):
     role_id = db.Column(db.Integer,db.ForeignKey('roles.id'))
     email = db.Column(db.String(25), unique=True, index=True)
     confirmed = db.Column(db.Boolean,default=False)
+    reset_email = db.Column(db.String(25))
 
     @property
     def password(self):
@@ -50,6 +51,10 @@ class User(UserMixin,db.Model):
         self.confirmed = True
         db.session.add(self)
         return True
+
+
+
+
 
 
     def __repr__(self):

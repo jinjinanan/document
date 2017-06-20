@@ -17,7 +17,7 @@ class Config(object):
     # MAIL_USE_SSL                                        #启用安全套接层(Secure Sockets Layer，SSL)协议
     MAIL_USERNAME = '798618564@qq.com' #os.environ.get('MAIL_USERNAME')     #邮件账户的用户名
     MAIL_PASSWORD = 'xmllnbotgozlbfeb'#os.environ.get('MAIL_PASSWORD')     #邮件账户的密码
-    FLASKY_MAIL_SUBJECT_PREFIX = '[Flasky]'
+    FLASKY_MAIL_SUBJECT_PREFIX = '[clb]'
     FLASKY_MAIL_SENDER = '798618564@qq.com'
 
     @staticmethod

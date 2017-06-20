@@ -36,15 +36,23 @@ class RegistrationForm(Form):
 class ModifyPassword(Form):
     odlPassword = PasswordField('Old Password',validators=[DataRequired()])
     newPassword1 = PasswordField('New Password',validators=[DataRequired()])
-    submit = SubmitField('Submit')
-
-class ResetPassword(Form):
-    userName = StringField('UserName',validators=[DataRequired(),Length(1,64)])
+    newPassword2 = PasswordField('Repeat New Password',validators=[DataRequired(),EqualTo('newPassword2',message='Passwords must match.')])
     submit = SubmitField('Submit')
 
 class ModifyEmail(Form):
-    email = StringField('Email',validators=[DataRequired(),Email(),Length(1,50)])
+    email = StringField('Email', validators=[DataRequired(), Email(), Length(1, 50)])
     sumbit = SubmitField('Submit')
+
+class ResetPassword(Form):
+    password = PasswordField('New Password',validators=[DataRequired()])
+    ConfPassword = PasswordField('Confirm Password',validators=[DataRequired(),EqualTo('ConfPassword',message='passwords must match.')])
+    submit = SubmitField('Submit')
+
+class ValidEmail(Form):
+    email = StringField('Enter Your Email', validators=[DataRequired(), Email(), Length(1, 50)])
+    submit = SubmitField('Submit')
+
+
 
 
 

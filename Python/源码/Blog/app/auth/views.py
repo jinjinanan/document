@@ -1,8 +1,8 @@
-from flask import render_template,redirect,request,url_for,flash
+from flask import render_template,redirect,request,url_for,flash,g
 from . import auth
 from flask_login import login_required,login_user,logout_user,current_user
 from ..models import User
-from .forms import LoginForm,RegistrationForm,ModifyPassword
+from .forms import LoginForm,RegistrationForm,ModifyPassword,ModifyEmail,ResetPassword,ValidEmail
 from .. import db
 from ..email import send_mail
 
@@ -22,14 +22,13 @@ def login():
 @auth.route('/logout')
 @login_required     # Flask-Login 提供login_required 保护路由只让认证用户访问
 def logout():
-    logout_user()   #删除并重设用户会话
-    flash('You have been logged out.')  #显示一个 Flash 消息
-    return redirect(url_for('main.index')) #重定向到首页
+    logout_user()                           #删除并重设用户会话
+    flash('You have been logged out.')      #显示一个 Flash 消息
+    return redirect(url_for('main.index'))  #重定向到首页
 
 @auth.route('/register',methods=['GET','POST'])
 def register():
     form = RegistrationForm()
-    print(form.email.data)
     if form.validate_on_submit():
         user = User(email = form.email.data,
                     username = form.username.data,
@@ -42,9 +41,7 @@ def register():
         token = user.generate_confirmation_token()
         send_mail(user.email,'Confirm Your Account','auth/email/confirm',user=user,token=token)
         flash('A confirmation email has been send your by email.')
-
         return redirect(url_for('main.index'))
-
     return render_template('auth/login.html',form = form)
 
 @auth.route('/confirm/<token>')
@@ -89,11 +86,14 @@ def resend_confirmation():
     return redirect(url_for('main.index'))
 
 
+#安全设置
 @auth.route('/SecuritySetting')
 @login_required
 def SecuritySetting():
     return render_template('auth/SecuritySetting/SecuritySetting.html')
 
+
+# 修改电子邮件
 @auth.route('/ModifyPassword' ,methods = ['GET','POST'])
 @login_required
 def ModifyPassWord():
@@ -110,7 +110,55 @@ def ModifyPassWord():
             return render_template(url_for('auth.SecuritySetting'))
     return render_template('auth/SecuritySetting/ModifyPassword.html',form = form)
 
+#修改密码
+@auth.route('/ModifyEmail', methods = ['GET','POST'])
+@login_required
+def Modifyemail():
+    form = ModifyEmail()
+    if form.validate_on_submit():
+        current_user.reset_email = form.email.data
+        token = current_user.generate_confirmation_token()
+        send_mail(current_user.reset_email,'Confirm Your Account','auth/email/changeEmail',user = current_user,token = token)
+        flash('A confirmation email has been send your by email.')
+        db.session.add(current_user)
+        db.session.commit()
+        return redirect(url_for('main.index'))
+    return render_template('auth/SecuritySetting/ModifyEmail.html',form = form)
 
 
+@auth.route('/confirmNewEmail/<token>')
+@login_required
+def confimNewEmail(token):
+    if current_user.confirm(token):
+        current_user.email = current_user.reset_email
+        current_user.reset_email = ''
+        db.session.add(current_user)
+        db.session.commit()
+        flash('修改邮箱成功')
+        return redirect(url_for('main.index'))
+    else:
+        flash('修改邮箱失败')
+        return redirect(url_for('auth.SecuritySetting'))
 
+#忘记密码
+@auth.route('/ForgetPassword',methods = ['GET','POST'])
+def forgetPassword():
+    form = ValidEmail()
+    if form.validate_on_submit():
+        newEmail = form.email.data
+        user = db.session.query(User).filter(User.email == newEmail).first()
+        if user is not None:
+            flash('a email has been send your mailbox')
+            send_mail(form.email.data, 'Found Your Account',
+                      'auth/email/resetPassword',token =user.generate_confirmation_token )
+            redirect(url_for('main.index'))
+        else:
+            flash('not have user')
+    return render_template('auth/SecuritySetting/ValidEmail.html',form = form)
 
+@auth.route('/confirmUser-ForgetPassword/<token>',methods = ['GET','POST'])
+def confirmUser_ForgetPassword(token):
+    form = ResetPassword()
+    if form.validate_on_submit():
+        pass
+    return render_template('auth/SecuritySetting/ResetPassword.html',form = form)
