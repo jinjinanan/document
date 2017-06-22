@@ -16,7 +16,7 @@ from  flask_login import LoginManager
 
 bootstrap = Bootstrap()
 mail = Mail()
-moment = Moment
+moment = Moment()
 db = SQLAlchemy()
 
 #Flask-Login 扩展
@@ -31,7 +31,7 @@ def create_app(config_name):
     config[config_name].init_app(app)
 
     bootstrap.init_app(app)
-    # moment.init_app(app)
+    moment.init_app(app)
     db.init_app(app)
     login_manager.init_app(app)
     mail.init_app(app)

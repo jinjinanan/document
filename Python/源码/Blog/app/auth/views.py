@@ -6,6 +6,18 @@ from .forms import LoginForm,RegistrationForm,ModifyPassword,ModifyEmail,ResetPa
 from .. import db
 from ..email import send_mail
 
+#如果 before_request 或 before_app_request 的回调返回响应或重定
+@auth.before_app_request
+def before_request():
+    # 用户已登录
+    # 用户未认证
+    # 请求的端点(使用 request.endpoint 获取)不在认证蓝本中。访问认证路由要获取权
+    # 限，因为这些路由的作用是让用户确认账户或执行其他账户管理操作。
+    if current_user.is_authenticated:
+        current_user.ping()
+        if not current_user.confirmed \
+            and request.endpoint[:5] != 'auth.':        #切片 截取前5个字符
+            return redirect(url_for('auth.unconfirmed'))
 
 @auth.route('/login',methods=['GET','POST'])
 def login():
@@ -58,18 +70,6 @@ def confirm(token):
     else:
         flash('The confirmation link is invalid or has expired')
     return redirect(url_for('main.index'))
-
-@auth.before_app_request    #如果 before_request 或 before_app_request 的回调返回响应或重定
-def before_request():
-    # 用户已登录
-    # 用户未认证
-    # 请求的端点(使用 request.endpoint 获取)不在认证蓝本中。访问认证路由要获取权
-    # 限，因为这些路由的作用是让用户确认账户或执行其他账户管理操作。
-    if current_user.is_authenticated \
-        and not current_user.confirmed \
-        and request.endpoint[:5] != 'auth.' \
-        and request.endpoint != 'static':
-        return redirect(url_for('auth.unconfirmed'))
 
 @auth.route('/unconfirmed')
 def unconfirmed():
@@ -156,6 +156,7 @@ def forgetPassword():
             flash('not have user')
     return render_template('auth/SecuritySetting/ValidEmail.html',form = form)
 
+#忘记密码正在建设中
 @auth.route('/confirmUser-ForgetPassword/<token>',methods = ['GET','POST'])
 def confirmUser_ForgetPassword(token):
     form = ResetPassword()
