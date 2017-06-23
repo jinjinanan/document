@@ -1,6 +1,5 @@
 {% extends "base.html" %}
 {% import "bootstrap/wtf.html" as wtf %}
-<!--{% import "_macros.html" as macros%}-->
 
 {% block title %}Flasky{% endblock %}
 
@@ -14,9 +13,5 @@
     {% endif %}
 </div>
 <!--_posts.html 模板名的下划线前缀不是必 须使用的，这只是一种习惯用法，以区分独立模板和局部模板-->
-<!--{% include'_post.html' %}-->
-
-<!--<div class="pagination">-->
-    <!--&lt;!&ndash;{{macros.pagination_widget(pagination,'.index')}}&ndash;&gt;-->
-<!--</div>-->
+{% include'_post.html' %}
 {% endblock %}

@@ -27,8 +27,8 @@ def index():
     #     .paginate(page,per_page=20,
     #               error_out=False)
     # posts = pagination.items
-    # posts = Post.query.order_by(Post.timestamp.desc()).all()
-    return render_template('index.html',form = form)
+    posts = Post.query.order_by(Post.timestamp.desc()).all()
+    return render_template('index.html',form = form,posts = posts)
 
 
 @main.route('/admin')
