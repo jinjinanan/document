@@ -19,16 +19,18 @@ def index():
         post = Post(body = form.body.data,author = current_user._get_current_object())
         db.session.add(post)
         return redirect(url_for('.index'))
-    # page = request.args.get('page', 1, type=int)
-    # # #页 数是 paginate() 方法的第一个参数，也是唯一必需的参数
-    # # #可选参数 per_page 用来指定 每页显示的记录数量;如果没有指定，则默认显示 20 个记录
-    # # #error_ out，当其设为 True 时(默认值)，如果请求的页数超出了范围，则会返回 404 错误;如果 设为 False，页数超出范围时会返回一个空列表
-    # pagination = Post.query.order_by(Post.timestamp.desc())\
-    #     .paginate(page,per_page=20,
-    #               error_out=False)
-    # posts = pagination.items
-    posts = Post.query.order_by(Post.timestamp.desc()).all()
-    return render_template('index.html',form = form,posts = posts)
+    page = request.args.get('page', 1, type=int)
+    # #页 数是 paginate() 方法的第一个参数，也是唯一必需的参数
+    # #可选参数 per_page 用来指定 每页显示的记录数量;如果没有指定，则默认显示 20 个记录
+    # #error_ out，当其设为 True 时(默认值)，如果请求的页数超出了范围，则会返回 404 错误;如果 设为 False，页数超出范围时会返回一个空列表
+    pagination = Post.query.order_by(Post.timestamp.desc())\
+        .paginate(page,per_page=20,
+                  error_out=False)
+    posts = pagination.items
+    # import pdb
+    # pdb.set_trace()
+    # posts = Post.query.order_by(Post.timestamp.desc()).all()
+    return render_template('index.html',form = form,posts = posts,pagination = pagination)
 
 
 @main.route('/admin')

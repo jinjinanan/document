@@ -2,8 +2,9 @@
 
 <ul class="pagination">
     <li {% if not pagination.has_prev %} class="disabled" {% endif %}}>
+        <!--Jinja2 宏的参数列表中不用加入 **kwargs 即可接收关键字参数-->
         <a href="{% if pagination.has_prev %}
-            {{ url_for(endpoint,page = pagination.page - 1, **kw)}}
+            {{ url_for(endpoint,page = pagination.page - 1, **kwargs)}}
             {% else %}
             #
             {%endif%}">
@@ -15,11 +16,11 @@
         {% if p%}
             {% if p == pagination.page %}
                 <li class="active">
-                    <a href="{{url_for(endpoint,page = p,**kw)}}" > {{p}} </a>
+                    <a href="{{url_for(endpoint,page = p,**kwargs)}}" > {{p}} </a>
                 </li>
             {% else %}
                 <li>
-                    <a href="{{url_for(endpoint,page = p,**kw)}}">{{p}}</a>
+                    <a href="{{url_for(endpoint,page = p,**kwargs)}}">{{p}}</a>
                 </li>
             {% endif %}
         {% else %}
@@ -30,7 +31,7 @@
     {%endfor%}
     <li {% if not pagination.has_next%} class="disabled" {% endif %}>
         <a href="{% if pagination.has_next%}
-                 {{url_for(endpoint,page=pagination.page + 1,**kw)}}
+                 {{url_for(endpoint,page=pagination.page + 1,**kwargs)}}
                   {% else %}}#{%endif%}}">
             &raquo;
         </a>
