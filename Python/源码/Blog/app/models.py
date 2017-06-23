@@ -39,7 +39,7 @@ class User(UserMixin,db.Model):
 
     avatar_hash = db.Column(db.String(32))
 
-    # posts = db.relationship('Post',backref='author',lazy='dynamic')
+    posts = db.relationship('Post',backref='author',lazy='dynamic')
 
 
 
@@ -49,9 +49,9 @@ class User(UserMixin,db.Model):
             if self.email == current_app.config['FLASKY_ADMIN']:
                 self.role = Role.query.filter_by(permissions = 0xff).first()
             if self.role is None:
-                self.role = Role.query.filter_by(default = True).first()
+                self.role = Role.query.filter_by(default_role = True).first()
         if self.email is None or self.avatar_hash is None:
-            self.avatar_hash = hashlib.md5(self.email.encode('utf-8').hexdigest())
+            self.avatar_hash = hashlib.md5(self.email.encode('utf-8')).hexdigest()
 
     @property
     def password(self):
@@ -106,6 +106,32 @@ class User(UserMixin,db.Model):
         hash = hashlib.md5(self.email.encode('utf-8')).hexdigest()
         return '{url}/{hash}?s={size}&d={default}&r={rating}'\
             .format(url = url,hash = hash,size = size,default = default,rating = rating)
+
+    #生成虚拟数据
+    @staticmethod
+    def generate_fake(count = 1000):
+        # 这个异常的处理方式是，在继续操作之前回滚会话。
+        # 在循环中生成 重复内容时不会把用户写入数据库，因此生成的虚拟用户总数可能会比预期少
+        from sqlalchemy.exc import IntegrityError
+        from random import seed
+        import forgery_py
+        seed()
+        for i in range(count):
+            u = User(email = forgery_py.internet.email_address(),
+                     username = forgery_py.internet.user_name(True),
+                     password = forgery_py.lorem_ipsum.word(),
+                     confirmed = True,
+                     name = forgery_py.name.full_name(),
+                     location = forgery_py.address.city(),
+                     about_me = forgery_py.lorem_ipsum.sentence(),
+                     member_since = forgery_py.date.date(True))
+            db.session.add(u)
+            try:
+                db.session.commit()
+            except IntegrityError:
+                db.session.rollback()
+
+
 
 
 
@@ -169,12 +195,28 @@ class Permission:
     ADMINTSTER = 0x80               #0b10000000(0x80) 管理网站
 
 
-# class Post(db.Model):
-#     __tablename__ = 'posts'
-#     id = db.Column(db.Integer,primary_key=True)
-#     body = db.Column(db.Text)
-#     timestamp = db.Column(db.DateTime,index=True,default=datetime.utcnow)
-#     author_id = db.Column(db.Integer,db.ForeignKey('user.id'))
+class Post(db.Model):
+    __tablename__ = 'Post'
+    id = db.Column(db.Integer,primary_key=True)
+    body = db.Column(db.Text)
+    timestamp = db.Column(db.DateTime,index=True,default=datetime.utcnow)
+    author_id = db.Column(db.Integer,db.ForeignKey('users.id'))
+
+    @staticmethod
+    def generate_fake(count = 100):
+        from random import seed,randint
+        import forgery_py
+
+        seed()
+        user_count = User.query.count()
+        for i in range(count):
+            u = User.query.offset(randint(0,user_count - 1)).first()
+            p = Post(body = forgery_py.lorem_ipsum.sentences(randint(1,5)),
+                     timestamp = forgery_py.date.date(True),
+                     author = u)
+            db.session.add(p)
+            db.session.commit()
+
 
 
 

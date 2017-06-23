@@ -14,3 +14,8 @@ class EditProfileForm(FlaskForm):
     location = StringField('Location',validators=[Length(0.4)])
     about_me = TextAreaField('About Me')
     submit = SubmitField('Submit')
+
+class PostForm(FlaskForm):
+    body = TextAreaField("what's on your mind?",validators=[required()])
+    submit = SubmitField('Submit')
+

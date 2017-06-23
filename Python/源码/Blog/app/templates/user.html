@@ -37,4 +37,7 @@
             </p>
         </div>
     </div>
+    <h3>Post by {{user.username}}</h3>
+    <!--_posts.html 模板名的下划线前缀不是必 须使用的，这只是一种习惯用法，以区分独立模板和局部模板-->
+    {% include'_post.html' %}
 {% endblock%}

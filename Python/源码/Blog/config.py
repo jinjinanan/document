@@ -19,6 +19,7 @@ class Config(object):
     MAIL_PASSWORD = 'xmllnbotgozlbfeb'#os.environ.get('MAIL_PASSWORD')     #邮件账户的密码
     FLASKY_MAIL_SUBJECT_PREFIX = '[clb]'
     FLASKY_MAIL_SENDER = '798618564@qq.com'
+    FLASKY_ADMIN = 'jinjinanan@hotmail.com'
 
     @staticmethod
     def init_app(app):      #可以执行对当前 环境的配置初始化。现在，基类 Config 中的 init_app() 方法为空

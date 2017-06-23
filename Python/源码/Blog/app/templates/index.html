@@ -1,4 +1,6 @@
 {% extends "base.html" %}
+{% import "bootstrap/wtf.html" as wtf %}
+<!--{% import "_macros.html" as macros%}-->
 
 {% block title %}Flasky{% endblock %}
 
@@ -6,4 +8,15 @@
 <div class="page-header">
     <h1>Hello, {% if current_user.is_authenticated %}{{ current_user.username }}{% else %}Stranger{% endif %}!</h1>
 </div>
+<div>
+    {% if current_user.can(Permission.WRITE_ARTICLES) %}
+    {{ wtf.quick_form(form)}}
+    {% endif %}
+</div>
+<!--_posts.html 模板名的下划线前缀不是必 须使用的，这只是一种习惯用法，以区分独立模板和局部模板-->
+<!--{% include'_post.html' %}-->
+
+<!--<div class="pagination">-->
+    <!--&lt;!&ndash;{{macros.pagination_widget(pagination,'.index')}}&ndash;&gt;-->
+<!--</div>-->
 {% endblock %}
