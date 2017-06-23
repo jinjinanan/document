@@ -72,6 +72,12 @@ def edit_profile():
     form.about_me.data = current_user.about_me
     return render_template('EditProfile.html',form = form)
 
+#每篇文章都要有一个专页，使用唯一的 URL 引用
+@main.route('/post/<int:id>')
+def post(id):
+    post = Post.query.get_or_404(id)
+    return render_template('post.html',posts = [post])
+
 
 
 
