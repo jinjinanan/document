@@ -12,9 +12,7 @@ from flask_pagedown import PageDown     #使用 JavaScript 实现的客户端 Ma
 
 # Flask-Login 扩展 :
 # 用来管理用户认证系统中的认证状态，且不依赖特定的认证机制。
-from  flask_login import LoginManager
-
-
+from flask_login import LoginManager
 
 bootstrap = Bootstrap()
 mail = Mail()
@@ -31,6 +29,7 @@ login_manager.login_view = 'auth.login'           #设置登陆页面的端点�
 
 def create_app(config_name):
     app = Flask(__name__)
+
     app.config.from_object(config[config_name])
     config[config_name].init_app(app)
 
@@ -47,4 +46,6 @@ def create_app(config_name):
     from .auth import auth as auth_blueprint
     app.register_blueprint(auth_blueprint,url_prefix='/auth')       #蓝图可以在不同的位置挂载
 
+    from .api_1_0 import api as api_1_0_blueprint
+    app.register_blueprint(api_1_0_blueprint,url_prefix='/api/v1.0')
     return app
