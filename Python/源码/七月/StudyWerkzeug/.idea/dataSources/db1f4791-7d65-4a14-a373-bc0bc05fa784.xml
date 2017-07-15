@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dataSource name="MySQL - StudyWerkzeug@120.25.247.186">
+  <database-model serializer="dbm" rdbms="MYSQL" format-version="2.6">
+    <schema id="1" name="StudyWerkzeug">
+      <visible>1</visible>
+    </schema>
+    <schema id="2" name="awesome"/>
+    <schema id="3" name="information_schema"/>
+    <table id="4" parent="1" name="user"/>
+    <column id="5" parent="4" name="name">
+      <mandatory>1</mandatory>
+      <data-type>char(255)|0</data-type>
+    </column>
+    <column id="6" parent="4" name="id">
+      <mandatory>1</mandatory>
+      <data-type>int(11)|0</data-type>
+      <sequence-identity>1</sequence-identity>
+    </column>
+    <column id="7" parent="4" name="password">
+      <mandatory>1</mandatory>
+      <data-type>char(255)|0</data-type>
+    </column>
+    <column id="8" parent="4" name="email">
+      <mandatory>1</mandatory>
+      <data-type>char(255)|0</data-type>
+    </column>
+    <index id="9" parent="4" name="user_id_uindex">
+      <columns>id</columns>
+      <desc-columns></desc-columns>
+      <unique>1</unique>
+    </index>
+    <key id="10" parent="4" name="PRIMARY">
+      <columns>id</columns>
+      <primary>1</primary>
+    </key>
+    <key id="11" parent="4" name="user_id_uindex">
+      <columns>id</columns>
+      <underlying-index>user_id_uindex</underlying-index>
+    </key>
+  </database-model>
+</dataSource>

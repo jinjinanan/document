@@ -2,6 +2,10 @@
 # -*- coding: utf-8 -*-
 
 class Config(object):
+    # http://docs.sqlalchemy.org/en/latest/core/index.html
+    SQLALCHEMY_TRACK_MODIFICATIONS = False
+    SECRET_KEY = 'clb'
+
 
     @staticmethod
     def init_app(app):
@@ -9,6 +13,7 @@ class Config(object):
 
 
 class DevelopmentConfig(Config):
+    SQLALCHEMY_DATABASE_URI = 'mysql+pymysql://clbMacBookPro:clbMacBookPro@120.25.247.186:3306/StudyWerkzeug?charset=utf8'
     DEBUG = True
 
 

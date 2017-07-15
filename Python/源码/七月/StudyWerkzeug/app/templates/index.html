@@ -1,0 +1,43 @@
+{% extends "base.html" %}
+
+{% block append %}
+
+
+{% endblock %}
+
+{% block content%}
+
+
+    <div id="carousel" class="carousel slide" data-ride="carousel" data-interval = '10000' >
+        <!--轮播标志-->
+        <ol class="carousel-indicators">
+            {% for i in m.indicators%}
+                {% if i == '0' %}
+                    <li data-slide-to='{{ i }}'  class="active"></li>
+                {% else %}
+                    <li data-slide-to="{{ i }}" ></li>
+                {% endif %}
+            {% endfor%}
+        </ol>
+        <!--轮播项目-->
+        <div class="carousel-inner">
+            {% for i in m.imgSrc %}
+                {% if i == 'img/nav1.jpg' %}
+                    <div class="item active">
+                    <img src= " {{url_for('static', filename = i)}} " >
+                    </div>
+                {% else %}
+                    <div class="item">
+                        <img src= " {{url_for('static', filename = i)}} " >
+                     </div>
+                {% endif %}
+            {% endfor %}
+        </div>
+        <!--轮播导航-->
+        <a class="carousel-control left" href="#carousel" data-slide ='prev'>prew</a>
+        <a class="carousel-control right" href="#carousel" data-slide="next">next</a>
+    </div>
+
+
+
+{% endblock %}

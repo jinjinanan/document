@@ -68,7 +68,7 @@ class User(UserMixin,db.Model):
 
 
 
-    def __init__(self,**kw):
+    def__init__(self,**kw):
         super(User,self).__init__(**kw)
         if self.role is None:
             if self.email == current_app.config['FLASKY_ADMIN']:

@@ -1,9 +1,10 @@
 {% extends "bootstrap/base.html" %}
 
-{% block title %} This is an example page {% endblock %}
+{% block title %} clb {% endblock %}
 
 {% block head %}
     {{super()}}
+<!--clb-->
     <script src="{{url_for('static',filename='Javastrap.js')}}"></script>
     <script>
         var str = "http://127.0.0.1:5000/static/styles.css?radom="+Math.random();
@@ -27,6 +28,7 @@
                 <li class=""><a href="{{url_for('main.index')}}">home</a></li>
                 <li><a href="#">Object-C</a></li>
                 <li><a href="#">Python</a></li>
+                <li><a href="#">词典</a></li>
 
                 <li class="dropdown">
                     <a class="dropdown-toggle" data-toggle="dropdown" href="#">
@@ -39,6 +41,16 @@
                         <li class="divider"></li>
                         <li><a href="#">JQuery</a></li>
                         <li><a href="{{url_for('main.bootstrap')}}">Bootstrap</a></li>
+                    </ul>
+                </li>
+
+                <li class="dropdown">
+                    <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+                        用户<span class="caret"></span>
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li><a href="{{url_for('main.login')}}">登陆</a></li>
+                        <li><a href="{{url_for('main.regist')}}">注册</a></li>
                     </ul>
                 </li>
             </ul>
@@ -55,6 +67,7 @@
 
 {%block scripts %}
     {{super()}}
+
 
 {% endblock %}
 
