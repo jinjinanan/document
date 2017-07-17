@@ -1,10 +1,11 @@
 
-from flask import render_template,url_for
+from flask import render_template,url_for,flash
 from . import main
-from .mainModel import NavModel,indexModel,userModel
 from .forms import loginForm,registForm
 from .. import db
 from flask import redirect
+from .mainModel import NavModel,indexModel,userModel
+
 
 
 # 一级界面 不需要登陆
@@ -28,24 +29,28 @@ def bootstrap():
 def jquery():
     return render_template('JQuery.html')
 
-@main.route('/login')
+@main.route('/login',methods=['GET','POST'])
 def login():
     form = loginForm()
     if form.validate_on_submit():
-        pass
+        user = userModel.query.filter_by(name = form.username.data).first()
+        import pdb
+        pdb.set_trace()
+        if user is not None and user.verify_password(form.password.data):
+            flash('登陆成功')
+            return redirect(url_for('main.index'))
     return render_template('login.html',form = form)
 
 @main.route('/regist',methods=['GET','POST'])
 def regist():
     form = registForm()
     if form.validate_on_submit():
-        import pdb
-        pdb.set_trace()
         m = userModel(email=form.email.data,
                   name=form.username.data,
-                  password=form.password.data)
+                    password = form.password.data)
         db.session.add(m)
         db.session.commit()
+        flash(u'注册成功', 'message')
         return redirect(url_for('main.index'))
     return render_template('regist.html',form = form)
 

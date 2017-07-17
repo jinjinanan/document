@@ -60,15 +60,23 @@
 {% endblock %}
 
 {% block content%}
+   {% for message in get_flashed_messages()%}
+     <div class="container">
+        <div class="alert alert-warning">
+            <button type="button" class="close" data-dismiss="alert">
+                &times;
+            </button>
+            {{message}}
+        </div>
+    </div>
+    {% endfor%}
+
     <div class="clb_divider_height"></div>
     {%block page_content%}{%endblock%}
-
 {% endblock %}
 
 {%block scripts %}
     {{super()}}
-
-
 {% endblock %}
 
 
