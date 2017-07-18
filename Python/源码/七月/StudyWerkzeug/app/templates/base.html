@@ -49,13 +49,21 @@
                         用户<span class="caret"></span>
                     </a>
                     <ul class="dropdown-menu">
+                        {% if current_user.is_authenticated %}
+                        <li><a href="{{url_for('main.logout')}}">退出登陆</a></li>
+                        {% else %}
                         <li><a href="{{url_for('main.login')}}">登陆</a></li>
+                        {% endif %}
+
                         <li><a href="{{url_for('main.regist')}}">注册</a></li>
+                        {% if current_user.is_authenticated %}
+                        <li class="divider"></li>
+                        <li><a href="{{url_for('manage.manage')}}">管理</a></li>
+                        {% endif %}
                     </ul>
                 </li>
             </ul>
         </div>
-
     </div>
 {% endblock %}
 
@@ -64,7 +72,7 @@
      <div class="container">
         <div class="alert alert-warning">
             <button type="button" class="close" data-dismiss="alert">
-                &times;
+                &times
             </button>
             {{message}}
         </div>

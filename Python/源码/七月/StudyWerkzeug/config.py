@@ -5,6 +5,8 @@ class Config(object):
     # http://docs.sqlalchemy.org/en/latest/core/index.html
     SQLALCHEMY_TRACK_MODIFICATIONS = False
     SECRET_KEY = 'clb'
+    UPLOAD_FOLDER = '/static/uploads'
+    MAX_CONTENT_LENGTH = 16 * 1024 * 1024
 
 
     @staticmethod
@@ -18,5 +20,5 @@ class DevelopmentConfig(Config):
 
 
 config = {
-    'default':DevelopmentConfig
+    'default': DevelopmentConfig
 }
