@@ -1,0 +1,20 @@
+.main_container
+{
+}
+
+.left_container
+{
+    position: relative;
+    background: red ;
+    /*padding-left: 0px;*/
+
+}
+
+.right_container
+{
+    position: relative;
+    background: green;
+
+}
+
+

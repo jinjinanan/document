@@ -22,13 +22,13 @@
 {% endblock %}
 
 {% block navbar%}
-    <div class="container">
+    <div class="container ">
         <div class="nav">
             <ul class="nav nav-pills nav-justified">
                 <li class=""><a href="{{url_for('main.index')}}">home</a></li>
                 <li><a href="#">Object-C</a></li>
                 <li><a href="#">Python</a></li>
-                <li><a href="#">词典</a></li>
+                <li><a href="{{url_for('dictionary.index')}}">词典</a></li>
 
                 <li class="dropdown">
                     <a class="dropdown-toggle" data-toggle="dropdown" href="#">

@@ -1,3 +1,86 @@
-{% extends "base.html" %}
-{% import "bootstrap/wtf.html" as wtf %}
+{% extends "bootstrap/base.html" %}
 
+{% block head %}
+ {{super()}}
+    <link rel="stylesheet" href="{{url_for('static',filename='thirdPart/custom.css')}}">
+     <script>
+        var str = "http://127.0.0.1:5000/static/thirdPart/manage.css?radom="+Math.random();
+        var head = document.getElementsByTagName('head')[0],
+        cssURL = str,
+        linkTag = document.createElement('link');
+        linkTag.id = 'dynamic-style';
+        linkTag.href = cssURL;
+        linkTag.setAttribute('rel','stylesheet');
+//        linkTag.setAttribute('media','all');
+        linkTag.setAttribute('type','text/css');
+        head.appendChild(linkTag);
+    </script>
+
+{% endblock %}
+
+{% block content %}
+    <div class="main_container">
+        <div class="col-md-2 col-xs-2 left_container">
+
+                <ul class="menu-one">
+                    <li><span class="caidan">菜单一</span>
+                         <ul style="display: none">
+                            <li><a href="{{url_for('manage.upload')}}">上传照片</a></li>
+                            <li><a href="#">b</a></li>
+                        </ul>
+                    </li>
+                    <li  ><span class="caidan">菜单二</span>
+                         <ul style="display: none">
+                            <li><a href="#">1</a></li>
+                            <li><a href="#">2</a></li>
+                        </ul>
+                    </li>
+                    <li  >
+                        <span class="caidan">菜单三</span>
+                        <ul style="display: none">
+                            <li><a href="#">a1</a></li>
+                            <li><a href="#">b2</a></li>
+                        </ul>
+                    </li>
+                </ul>
+
+        </div>
+        <div class="col-md-10 col-xs-10 right_container test">
+        </div>
+    </div>
+
+    <style>
+        body {font-size: 20px;font-family: "宋体","微软雅黑";}
+        a:link, a:visited{text-decoration: none}
+        ul,li{list-style: none;}
+        /* 所有li都设置颜色*/
+        .menu-one {padding-left: 0px}
+        .menu-one li{background-color: green;border: 1px #316a91; border-bottom: 0px}
+        .menu-one li a{padding-left: 10px;}
+        .menu-one li span{background-color:orange}
+        /*.menu-one .caidans{background-color: #7FFFD4 }*/
+        .menu-one li ul {display: none}
+
+    </style>
+{% endblock%}
+
+{%block scripts %}
+    {{super()}}
+    <script>
+        $(document).ready(function () {
+            $('.caidan').click(function () {
+
+                if($(this).siblings('ul').css('display') == 'none')
+                {
+                    $(this).siblings('ul').slideDown(100).children('li');
+
+                }
+                else
+                {
+                    $(this).siblings('ul').slideUp(100);
+                }
+            })
+        });
+    </script>
+
+{% endblock %}

@@ -1,8 +1,9 @@
-from config import config
 from flask import Flask
+from config import config
 from flask_bootstrap import Bootstrap
 from flask_sqlalchemy import SQLAlchemy
 from flask_login import LoginManager
+
 
 
 bootStrap = Bootstrap()
@@ -23,5 +24,8 @@ def create_app(config_name):
 
     from .manage import manage as manage_blueprint
     app.register_blueprint(manage_blueprint)
+
+    from .Dictionary import dictionary as dictionary_blueprint
+    app.register_blueprint(dictionary_blueprint)
 
     return app

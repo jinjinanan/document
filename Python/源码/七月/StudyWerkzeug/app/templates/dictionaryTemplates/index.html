@@ -1,0 +1,589 @@
+{% extends "bootstrap/base.html" %}
+
+{%block title%}
+词典
+{%endblock%}
+
+{% block head%}
+<link rel="stylesheet" type="text/css" href="{{url_for('static',filename = 'dictionary/dictionary.css')}}">
+<link rel="stylesheet" type="text/css" href="{{url_for('static',filename = 'dictionary/base.css')}}">
+<script src="http://libs.baidu.com/jquery/1.11.1/jquery.min.js"></script>
+<script src="{{url_for('static',filename='dictionary/dictionaryJS.js')}}" type="text/javascript"></script>
+
+
+{% endblock %}
+
+{% block content %}
+<div class="home-star-goods xm-carousel-container">
+    <div class="xm-plain-box">
+        <div class="box-hd">
+            <h2 class="title">小米明星单品</h2>
+            <div class="more">
+                <div class="xm-controls xm-controls-line-small xm-carousel-controls">
+                    <a class="control-prev control iconfont">前</a>
+                    <a class="control control-next iconfont">后</a>
+                    <a></a>
+                </div>
+            </div>
+        </div>
+        <div class="box-body">
+            <div class="xm-carousel-wrapper" style="height: 340px; overflow: hidden;">
+                <ul class="xm-carousel-list xm-carousel-col-5-list good-list rainbow-list clearfix J_carouselList"
+                style="width: 24880px;margin-left: 0px;transition: margin-left 0.5s ease;">
+                    <li class="rainbow-item-1"></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="page-main home-main">
+    <div class="home-brick-row-box home-brick-box ">
+        <div class="box-hd ">
+            <h2 class="title">家电</h2>
+            <div class="more ">
+                <ul class="tab-list">
+                    <li>热门</li>
+                    <li>电影电音</li>
+                    <li>电脑</li>
+                    <li>家居</li>
+                </ul>
+            </div>
+        </div>
+        <div class="box-bd">
+            <div class="row">
+                <div class="span4">
+                    <ul class="brick-promo-list">
+                        <li class="brick-item-l brick-item">
+                            <a href="">
+                                <img src="https://i3.mifile.cn/a4/xmad_14950222431232_Twnyl.jpg">
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="span16">
+                    <div class="tab-container">
+                        <ul class="brick-list">
+                            <li class="brick-item-m brick-item">
+                                <div class="figure-img">
+                                    <a href="#">
+                                        <img src="https://i1.mifile.cn/a1/pms_1490077454.46128587!220x220.png"
+                                             width="150" height="150">
+                                    </a>
+                                </div>
+                                <h3 class="title">
+                                    <a href="#">小米电视</a>
+                                </h3>
+                                <p class="desc">8月10日-16日限时特惠，立减400元</p>
+                                <p class="price">
+                                    <span>2199</span>元
+                                    <del><span>2599</span>元</del>
+                                </p>
+                                <p class="rank">1.1万人评价</p>
+                                <div class="flag flag-saleoff">享6折</div>
+                                <div class="review-wrapper">
+                                    <a href="#">
+                                        <span class="review">外形大方，超大气，安装师傅细心，打完眼还给打扫干净。...</span>
+                                        <span class="author">来自于 贤妻良母 的评价<span class="data" data-date="1498204389"></span>
+                                    </a>
+                                </div>
+                            </li>
+                            <li class="brick-item-m brick-item">
+                                <div class="figure-img">
+                                    <a href="#">
+                                        <img src="https://i1.mifile.cn/a1/pms_1490077454.46128587!220x220.png"
+                                             width="150" height="150">
+                                    </a>
+                                </div>
+                                <h3 class="title">
+                                    <a href="#">小米电视</a>
+                                </h3>
+                                <p class="desc">8月10日-16日限时特惠，立减400元</p>
+                                <p class="price">
+                                    <span>2199</span>元
+                                    <del><span>2599</span>元</del>
+                                </p>
+                                <p class="rank">1.1万人评价</p>
+                                <div class="flag flag-saleoff">享6折</div>
+                            </li>
+                            <li class="brick-item-m brick-item">
+                                <div class="figure-img">
+                                    <a href="#">
+                                        <img src="https://i1.mifile.cn/a1/pms_1490077454.46128587!220x220.png"
+                                             width="150" height="150">
+                                    </a>
+                                </div>
+                                <h3 class="title">
+                                    <a href="#">小米电视</a>
+                                </h3>
+                                <p class="desc">8月10日-16日限时特惠，立减400元</p>
+                                <p class="price">
+                                    <span>2199</span>元
+                                    <del><span>2599</span>元</del>
+                                </p>
+                                <p class="rank">1.1万人评价</p>
+                                <div class="flag flag-saleoff">享6折</div>
+                            </li>
+                            <li class="brick-item-m brick-item">
+                                <div class="figure-img">
+                                    <a href="#">
+                                        <img src="https://i1.mifile.cn/a1/pms_1490077454.46128587!220x220.png"
+                                             width="150" height="150">
+                                    </a>
+                                </div>
+                                <h3 class="title">
+                                    <a href="#">小米电视</a>
+                                </h3>
+                                <p class="desc">8月10日-16日限时特惠，立减400元</p>
+                                <p class="price">
+                                    <span>2199</span>元
+                                    <del><span>2599</span>元</del>
+                                </p>
+                                <p class="rank">1.1万人评价</p>
+                                <div class="flag flag-saleoff">享6折</div>
+                            </li>
+                            <li class="brick-item-m brick-item">
+                                <div class="figure-img">
+                                    <a href="#">
+                                        <img src="https://i1.mifile.cn/a1/pms_1490077454.46128587!220x220.png"
+                                             width="150" height="150">
+                                    </a>
+                                </div>
+                                <h3 class="title">
+                                    <a href="#">小米电视</a>
+                                </h3>
+                                <p class="desc">8月10日-16日限时特惠，立减400元</p>
+                                <p class="price">
+                                    <span>2199</span>元
+                                    <del><span>2599</span>元</del>
+                                </p>
+                                <p class="rank">1.1万人评价</p>
+                                <div class="flag flag-saleoff">享6折</div>
+                            </li>
+                            <li class="brick-item-m brick-item">
+                                <div class="figure-img">
+                                    <a href="#">
+                                        <img src="https://i1.mifile.cn/a1/pms_1490077454.46128587!220x220.png"
+                                             width="150" height="150">
+                                    </a>
+                                </div>
+                                <h3 class="title">
+                                    <a href="#">小米电视</a>
+                                </h3>
+                                <p class="desc">8月10日-16日限时特惠，立减400元</p>
+                                <p class="price">
+                                    <span>2199</span>元
+                                    <del><span>2599</span>元</del>
+                                </p>
+                                <p class="rank">1.1万人评价</p>
+                                <div class="flag flag-saleoff">享6折</div>
+                            </li>
+                            <li class="brick-item-m brick-item">
+                                <div class="figure-img">
+                                    <a href="#">
+                                        <img src="https://i1.mifile.cn/a1/pms_1490077454.46128587!220x220.png"
+                                             width="150" height="150">
+                                    </a>
+                                </div>
+                                <h3 class="title">
+                                    <a href="#">小米电视</a>
+                                </h3>
+                                <p class="desc">8月10日-16日限时特惠，立减400元</p>
+                                <p class="price">
+                                    <span>2199</span>元
+                                    <del><span>2599</span>元</del>
+                                </p>
+                                <p class="rank">1.1万人评价</p>
+                                <div class="flag flag-saleoff">享6折</div>
+                            </li>
+                            <li class="brick-item-m brick-item">
+                                <div class="figure-img">
+                                    <a href="#">
+                                        <img src="https://i1.mifile.cn/a1/pms_1490077454.46128587!220x220.png"
+                                             width="150" height="150">
+                                    </a>
+                                </div>
+                                <h3 class="title">
+                                    <a href="#">小米电视</a>
+                                </h3>
+                                <p class="desc">8月10日-16日限时特惠，立减400元</p>
+                                <p class="price">
+                                    <span>2199</span>元
+                                    <del><span>2599</span>元</del>
+                                </p>
+                                <p class="rank">1.1万人评价</p>
+                                <div class="flag flag-saleoff">享6折</div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="home-brick-row-box home-brick-box ">
+        <div class="box-hd ">
+            <h2 class="title">家电</h2>
+            <div class="more ">
+                <ul class="tab-list">
+                    <li>热门</li>
+                    <li>电影电音</li>
+                    <li>电脑</li>
+                    <li>家居</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="box-bd">
+            <div class="row">
+                <div class="span4">
+                    <ul class="brick-promo-list">
+                        <li class="brick-item-l brick-item">
+                            <a href="">
+                                <img src="https://i3.mifile.cn/a4/xmad_14950222431232_Twnyl.jpg">
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="span16">
+                    <div class="tab-container">
+                        <ul class="brick-list">
+                            <li class="brick-item-m brick-item">
+                                <div class="figure-img">
+                                    <a href="#">
+                                        <img src="https://i1.mifile.cn/a1/pms_1490077454.46128587!220x220.png"
+                                             width="150" height="150">
+                                    </a>
+                                </div>
+                                <h3 class="title">
+                                    <a href="#">小米电视</a>
+                                </h3>
+                                <p class="desc">8月10日-16日限时特惠，立减400元</p>
+                                <p class="price">
+                                    <span>2199</span>元
+                                    <del><span>2599</span>元</del>
+                                </p>
+                                <p class="rank">1.1万人评价</p>
+                                <div class="flag flag-saleoff">享6折</div>
+                            </li>
+                            <li class="brick-item-m brick-item">
+                                <div class="figure-img">
+                                    <a href="#">
+                                        <img src="https://i1.mifile.cn/a1/pms_1490077454.46128587!220x220.png"
+                                             width="150" height="150">
+                                    </a>
+                                </div>
+                                <h3 class="title">
+                                    <a href="#">小米电视</a>
+                                </h3>
+                                <p class="desc">8月10日-16日限时特惠，立减400元</p>
+                                <p class="price">
+                                    <span>2199</span>元
+                                    <del><span>2599</span>元</del>
+                                </p>
+                                <p class="rank">1.1万人评价</p>
+                                <div class="flag flag-saleoff">享6折</div>
+                            </li>
+                            <li class="brick-item-m brick-item">
+                                <div class="figure-img">
+                                    <a href="#">
+                                        <img src="https://i1.mifile.cn/a1/pms_1490077454.46128587!220x220.png"
+                                             width="150" height="150">
+                                    </a>
+                                </div>
+                                <h3 class="title">
+                                    <a href="#">小米电视</a>
+                                </h3>
+                                <p class="desc">8月10日-16日限时特惠，立减400元</p>
+                                <p class="price">
+                                    <span>2199</span>元
+                                    <del><span>2599</span>元</del>
+                                </p>
+                                <p class="rank">1.1万人评价</p>
+                                <div class="flag flag-saleoff">享6折</div>
+                            </li>
+                            <li class="brick-item-m brick-item">
+                                <div class="figure-img">
+                                    <a href="#">
+                                        <img src="https://i1.mifile.cn/a1/pms_1490077454.46128587!220x220.png"
+                                             width="150" height="150">
+                                    </a>
+                                </div>
+                                <h3 class="title">
+                                    <a href="#">小米电视</a>
+                                </h3>
+                                <p class="desc">8月10日-16日限时特惠，立减400元</p>
+                                <p class="price">
+                                    <span>2199</span>元
+                                    <del><span>2599</span>元</del>
+                                </p>
+                                <p class="rank">1.1万人评价</p>
+                                <div class="flag flag-saleoff">享6折</div>
+                            </li>
+                            <li class="brick-item-m brick-item">
+                                <div class="figure-img">
+                                    <a href="#">
+                                        <img src="https://i1.mifile.cn/a1/pms_1490077454.46128587!220x220.png"
+                                             width="150" height="150">
+                                    </a>
+                                </div>
+                                <h3 class="title">
+                                    <a href="#">小米电视</a>
+                                </h3>
+                                <p class="desc">8月10日-16日限时特惠，立减400元</p>
+                                <p class="price">
+                                    <span>2199</span>元
+                                    <del><span>2599</span>元</del>
+                                </p>
+                                <p class="rank">1.1万人评价</p>
+                                <div class="flag flag-saleoff">享6折</div>
+                            </li>
+                            <li class="brick-item-m brick-item">
+                                <div class="figure-img">
+                                    <a href="#">
+                                        <img src="https://i1.mifile.cn/a1/pms_1490077454.46128587!220x220.png"
+                                             width="150" height="150">
+                                    </a>
+                                </div>
+                                <h3 class="title">
+                                    <a href="#">小米电视</a>
+                                </h3>
+                                <p class="desc">8月10日-16日限时特惠，立减400元</p>
+                                <p class="price">
+                                    <span>2199</span>元
+                                    <del><span>2599</span>元</del>
+                                </p>
+                                <p class="rank">1.1万人评价</p>
+                                <div class="flag flag-saleoff">享6折</div>
+                            </li>
+                            <li class="brick-item-m brick-item">
+                                <div class="figure-img">
+                                    <a href="#">
+                                        <img src="https://i1.mifile.cn/a1/pms_1490077454.46128587!220x220.png"
+                                             width="150" height="150">
+                                    </a>
+                                </div>
+                                <h3 class="title">
+                                    <a href="#">小米电视</a>
+                                </h3>
+                                <p class="desc">8月10日-16日限时特惠，立减400元</p>
+                                <p class="price">
+                                    <span>2199</span>元
+                                    <del><span>2599</span>元</del>
+                                </p>
+                                <p class="rank">1.1万人评价</p>
+                                <div class="flag flag-saleoff">享6折</div>
+                            </li>
+                            <li class="brick-item-m brick-item">
+                                <div class="figure-img">
+                                    <a href="#">
+                                        <img src="https://i1.mifile.cn/a1/pms_1490077454.46128587!220x220.png"
+                                             width="150" height="150">
+                                    </a>
+                                </div>
+                                <h3 class="title">
+                                    <a href="#">小米电视</a>
+                                </h3>
+                                <p class="desc">8月10日-16日限时特惠，立减400元</p>
+                                <p class="price">
+                                    <span>2199</span>元
+                                    <del><span>2599</span>元</del>
+                                </p>
+                                <p class="rank">1.1万人评价</p>
+                                <div class="flag flag-saleoff">享6折</div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="home-brick-row-box home-brick-box ">
+        <div class="box-hd ">
+            <h2 class="title">家电</h2>
+            <div class="more ">
+                <ul class="tab-list">
+                    <li>热门</li>
+                    <li>电影电音</li>
+                    <li>电脑</li>
+                    <li>家居</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="box-bd">
+            <div class="row">
+                <div class="span4">
+                    <ul class="brick-promo-list">
+                        <li class="brick-item-m brick-item">
+                            <a href="">
+                                <img src="https://i3.mifile.cn/a4/xmad_15003764013459_VjEDO.jpg">
+                            </a>
+                        </li>
+                        <li class="brick-item-m brick-item">
+                            <a href="">
+                                <img src="//i3.mifile.cn/a4/xmad_15016774208082_Gxeid.jpg">
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="span16">
+                    <div class="tab-container">
+                        <ul class="brick-list">
+                            <li class="brick-item-m brick-item">
+                                <div class="figure-img">
+                                    <a href="#">
+                                        <img src="https://i1.mifile.cn/a1/pms_1490077454.46128587!220x220.png"
+                                             width="150" height="150">
+                                    </a>
+                                </div>
+                                <h3 class="title">
+                                    <a href="#">小米电视</a>
+                                </h3>
+                                <p class="desc">8月10日-16日限时特惠，立减400元</p>
+                                <p class="price">
+                                    <span>2199</span>元
+                                    <del><span>2599</span>元</del>
+                                </p>
+                                <p class="rank">1.1万人评价</p>
+                                <div class="flag flag-saleoff">享6折</div>
+                            </li>
+                            <li class="brick-item-m brick-item">
+                                <div class="figure-img">
+                                    <a href="#">
+                                        <img src="https://i1.mifile.cn/a1/pms_1490077454.46128587!220x220.png"
+                                             width="150" height="150">
+                                    </a>
+                                </div>
+                                <h3 class="title">
+                                    <a href="#">小米电视</a>
+                                </h3>
+                                <p class="desc">8月10日-16日限时特惠，立减400元</p>
+                                <p class="price">
+                                    <span>2199</span>元
+                                    <del><span>2599</span>元</del>
+                                </p>
+                                <p class="rank">1.1万人评价</p>
+                                <div class="flag flag-saleoff">享6折</div>
+                            </li>
+                            <li class="brick-item-m brick-item">
+                                <div class="figure-img">
+                                    <a href="#">
+                                        <img src="https://i1.mifile.cn/a1/pms_1490077454.46128587!220x220.png"
+                                             width="150" height="150">
+                                    </a>
+                                </div>
+                                <h3 class="title">
+                                    <a href="#">小米电视</a>
+                                </h3>
+                                <p class="desc">8月10日-16日限时特惠，立减400元</p>
+                                <p class="price">
+                                    <span>2199</span>元
+                                    <del><span>2599</span>元</del>
+                                </p>
+                                <p class="rank">1.1万人评价</p>
+                                <div class="flag flag-saleoff">享6折</div>
+                            </li>
+                            <li class="brick-item-m brick-item">
+                                <div class="figure-img">
+                                    <a href="#">
+                                        <img src="https://i1.mifile.cn/a1/pms_1490077454.46128587!220x220.png"
+                                             width="150" height="150">
+                                    </a>
+                                </div>
+                                <h3 class="title">
+                                    <a href="#">小米电视</a>
+                                </h3>
+                                <p class="desc">8月10日-16日限时特惠，立减400元</p>
+                                <p class="price">
+                                    <span>2199</span>元
+                                    <del><span>2599</span>元</del>
+                                </p>
+                                <p class="rank">1.1万人评价</p>
+                                <div class="flag flag-saleoff">享6折</div>
+                            </li>
+                            <li class="brick-item-m brick-item">
+                                <div class="figure-img">
+                                    <a href="#">
+                                        <img src="https://i1.mifile.cn/a1/pms_1490077454.46128587!220x220.png"
+                                             width="150" height="150">
+                                    </a>
+                                </div>
+                                <h3 class="title">
+                                    <a href="#">小米电视</a>
+                                </h3>
+                                <p class="desc">8月10日-16日限时特惠，立减400元</p>
+                                <p class="price">
+                                    <span>2199</span>元
+                                    <del><span>2599</span>元</del>
+                                </p>
+                                <p class="rank">1.1万人评价</p>
+                                <div class="flag flag-saleoff">享6折</div>
+                            </li>
+                            <li class="brick-item-m brick-item">
+                                <div class="figure-img">
+                                    <a href="#">
+                                        <img src="https://i1.mifile.cn/a1/pms_1490077454.46128587!220x220.png"
+                                             width="150" height="150">
+                                    </a>
+                                </div>
+                                <h3 class="title">
+                                    <a href="#">小米电视</a>
+                                </h3>
+                                <p class="desc">8月10日-16日限时特惠，立减400元</p>
+                                <p class="price">
+                                    <span>2199</span>元
+                                    <del><span>2599</span>元</del>
+                                </p>
+                                <p class="rank">1.1万人评价</p>
+                                <div class="flag flag-saleoff">享6折</div>
+                            </li>
+                            <li class="brick-item-m brick-item">
+                                <div class="figure-img">
+                                    <a href="#">
+                                        <img src="https://i1.mifile.cn/a1/pms_1490077454.46128587!220x220.png"
+                                             width="150" height="150">
+                                    </a>
+                                </div>
+                                <h3 class="title">
+                                    <a href="#">小米电视</a>
+                                </h3>
+                                <p class="desc">8月10日-16日限时特惠，立减400元</p>
+                                <p class="price">
+                                    <span>2199</span>元
+                                    <del><span>2599</span>元</del>
+                                </p>
+                                <p class="rank">1.1万人评价</p>
+                                <div class="flag flag-saleoff">享6折</div>
+                            </li>
+                            <li class="brick-item-m brick-item">
+                                <div class="figure-img">
+                                    <a href="#">
+                                        <img src="https://i1.mifile.cn/a1/pms_1490077454.46128587!220x220.png"
+                                             width="150" height="150">
+                                    </a>
+                                </div>
+                                <h3 class="title">
+                                    <a href="#">小米电视</a>
+                                </h3>
+                                <p class="desc">8月10日-16日限时特惠，立减400元</p>
+                                <p class="price">
+                                    <span>2199</span>元
+                                    <del><span>2599</span>元</del>
+                                </p>
+                                <p class="rank">1.1万人评价</p>
+                                <div class="flag flag-saleoff">享6折</div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+{% endblock %}
+

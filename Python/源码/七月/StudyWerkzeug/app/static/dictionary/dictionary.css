@@ -1,0 +1,464 @@
+/*home 页面*/
+.page-main
+{
+    background-color: rgb(245,245,245);
+}
+
+/*row-box*/
+.home-brick-row-box
+{
+    height: 686px;
+}
+
+.home-brick-box
+{
+    margin-bottom:8px;
+}
+
+/*头*/
+.box-hd
+{
+    height: 58px;
+    position: relative;
+}
+
+.box-hd .title
+{
+    font-size:20px;
+    font-weight: 200px;
+    line-height: 58px;
+    color: #333;
+    margin: 0px;
+}
+
+.more
+{
+    position: absolute;
+    top: 0px;
+    right:0px;
+}
+.tab-list
+{
+    margin: 0px;
+    padding: 16px 0 0 0;
+    font-size: 16px;
+
+}
+/*body*/
+.box-bd
+{
+
+}
+
+.row
+{
+    margin-left: -14px;
+}
+
+.row:before
+{
+    content: "   ";
+    display: table;
+
+}
+.row:after
+{
+    content: "   ";
+    display: table;
+}
+.row:after
+{
+    clear: both;
+}
+
+/*左边的静态页面*/
+.brick-promo-list, .brick-list
+{
+    margin: 0px 0px -14px -14px;
+    padding: 0px;
+}
+
+.brick-item-promo-list, .brick-list
+{
+    height: 614px;
+}
+
+.brick-promo-list:after
+{
+    content: "  ";
+    display: table;
+}
+.brick-promo-list:after
+{
+   clear: both;
+}
+
+.brick-promo-list:before
+{
+    content: "  ";
+    display: table;
+}
+
+.brick-item-l
+{
+    height: 614px;
+}
+
+.brick-promo-list .brick-item-m
+{
+    height: 300px;
+    padding: 0px;
+}
+
+.brick-item
+{
+    position: relative;
+    float: left;
+    width: 234px;
+    margin-left: 14px;
+    margin-bottom: 14px;
+}
+
+.brick-promo-list a
+{
+    width: 100%;
+    height: 100%;
+}
+
+.brick-promo-list img
+{
+    width: 234px;
+}
+
+.brick-promo-list .brick-item-l img
+{
+    height: 614px;
+}
+
+.brick-item-active
+{
+    box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+    transform: translate3d(0, -2px, 0);
+}
+
+
+/* 右侧 */
+.tab-container
+{
+
+}
+
+.tab-container:before
+{
+    content: '   ';
+    display: table;
+}
+
+.tab-container:after
+{
+    content: '   ';
+    display: table;
+}
+.tab-container:after
+{
+    clear: both;
+}
+
+.home-brick-box .brick-list
+{
+    margin: 0px 0px -14px -14px;
+}
+.brick-list
+{
+    width: 992px;
+}
+.brick-item-m
+{
+    height: 246px;
+    padding: 34px 0px 20px;
+}
+.brick-item
+{
+    position: relative;
+    float: left;
+    width: 234px;
+    margin-left: 14px;
+    margin-bottom: 14px;
+    background: #fff;
+}
+
+.brick-item .figure-img
+{
+    width: 150px;
+    height:150px;
+    margin: 0px auto 18px;
+}
+
+.brick-item .title, .brick-item .title a
+{
+    color: #333;
+    text-overflow:ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+
+}
+.brick-item .title
+{
+    margin: 0px auto;
+    font-size: 14px;
+    font-weight: 400;
+    text-align: center;
+
+}
+.desc
+{
+
+}
+.brick-item .desc
+{
+    margin:0px 10px 10px;
+    text-align: center;
+    height: 18px;
+    color: #b0b0b0;
+    font-size: 12px;
+    text-overflow:ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+}
+.price
+{
+
+}
+.brick-item .price
+{
+    margin:0px 10px 10px;
+    text-align: center;
+    color: #ff6700;
+}
+.brick-item .price del
+{
+    color: #b0b0b0;
+}
+
+.rank
+{
+}
+.brick-item .rank
+{
+    margin:0px auto;
+    font-size: 12px;
+    text-align: center;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+.flag
+{
+
+}
+.brick-item .flag
+{
+    position: absolute;
+    top:0;
+    left: 50%;
+    width: 64px;
+    height: 20px;
+    margin-left: -32px;
+    font-size: 12px;
+    line-height: 20px;
+    text-align: center;
+    color: #fff;
+}
+.brick-item .flag-saleoff
+{
+    background: #e53953;
+}
+
+
+.brick-item-m .review-wrapper
+{
+    position: absolute;
+    bottom: 0px;
+    left: 0px;
+    width: 234px;
+    height: 0px;
+    z-index: 3;
+    font-size: 12px;
+    background-color: #ff6700;
+    transition: all 0.2s linear;
+    opacity: 0;
+}
+
+
+
+.brick-item-active .review-wrapper
+{
+    height: 76px;
+    opacity: 1;
+}
+.brick-item-m .review
+{
+    margin-bottom: 5px;
+    color: #ffffff;
+}
+.brick-item-m .author
+{
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+    color:rgba(255,255,255,0.6);
+}
+
+
+
+
+
+
+
+
+/*颜色*/
+.block-color-red-clb
+{
+    background: red;
+}
+
+.block-color-cyan-clb
+{
+    background: cyan;
+}
+.block-color-green-clb
+{
+    background: green;
+}
+
+
+div
+{
+    display: block;
+}
+
+ul
+{
+    display: block;
+}
+
+li
+{
+    list-style-type: none;
+    font-size:16px;
+    display: inline-block;
+
+}
+
+body
+{
+    margin: 0px;
+    min-width:1226px;
+}
+
+a
+{
+    text-decoration: none;
+    text-decoration-line: none;
+    text-decoration-style: initial;
+    text-decoration-color: initial;
+}
+
+.brick-item-m .review-wrapper a
+{
+    display: block;
+    padding: 8px 30px;
+    outline: 0;
+}
+
+
+/*bananer*/
+.xm-plain-box .box-hd
+{
+    position: relative;
+    height: 58px;
+    -webkit-font-smoothing: antialiased;
+}
+
+.xm-plain-box .box-hd .more
+{
+    position: absolute;
+    top: 0px;
+    right: 0px;
+}
+
+.home-star-goods .box-hd .more
+{
+    top: 24px;
+}
+
+.clearfix:before
+{
+    content: "  ";
+    display: table;
+}
+
+.clearfix:after
+{
+    content: "  ";
+    display: table;
+}
+.clearfix:after
+{
+    clear: both;
+}
+
+.home-star-goods .box-hd
+{
+    position: relative;
+    width: 1226px;
+    overflow: hidden;
+}
+
+.home-star-goods .box-body
+{
+    position: relative;
+    width: 1226px;
+    overflow: hidden;
+    padding-bottom: 40px;
+}
+
+.home-star-goods .good-list
+{
+    height: 340px;
+    overflow: hidden;
+}
+
+.xm-carousel-list
+{
+    margin: 0px;
+    padding: 0px;
+    list-style-type: none;
+}
+
+.home-star-goods .rainbow-list .rainbow-item-1
+{
+    border-top-color: #ffac13;
+}
+
+.home-star-goods .rainbow-list li
+{
+    height: 300px;
+    padding-top:39px;
+    border-top-width: 1px;
+    border-top-style: solid;
+    text-align: center;
+    background-color: #fafafa;
+}
+
+.xm-carousel-col-5-list li
+{
+    float: left;
+    width: 234px;
+}
+
+.xm-carousel-list li
+{
+    margin-right: 14px;
+}
