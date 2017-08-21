@@ -333,10 +333,10 @@
 }
 
 
-div
-{
-    display: block;
-}
+/*div*/
+/*{*/
+    /*display: block;*/
+/*}*/
 
 ul
 {
@@ -461,4 +461,34 @@ a
 .xm-carousel-list li
 {
     margin-right: 14px;
+
+}
+
+.thumbnail
+{
+    display: block;
+    margin: 0px auto 22px;
+    width: 160px;
+    height: 166px;
+}
+
+.home-star-goods .box-body img
+{
+    width: 160px;
+    height: 160px;
+}
+
+
+
+/*导航*/
+.home-hero-container
+{
+    position: relative;
+    min-width: 1226px;
+    margin: 0px auto;
+}
+
+.home-hero-slider{
+    position: relative;
+    height: 460px;
 }
