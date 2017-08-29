@@ -87,4 +87,28 @@ $(document).ready(function () {
     setInterval(controlHomeSlider,1000*3)
     // controlHomeSlider();
 
-})
+});
+
+$(document).ready(function () {
+    $(".item").mouseover(function () {
+        // this.attr({class:".item .nav-item-active"})
+        $(".header-nav-menu").css("z-index","70");
+        $(".header-nav-menu").slideDown("slow",function () {
+
+        });
+                             console.log(this);
+
+    });
+
+    $(".item").mouseout(function () {
+        $(".header-nav-menu").slideUp("slow",function () {
+            $(".header-nav-menu").css("z-index","0");
+
+        });
+                    console.log(this);
+
+
+    });
+
+});
+

@@ -492,3 +492,183 @@ a
     position: relative;
     height: 460px;
 }
+
+/*站点头*/
+.site-header
+{
+    min-width: 1225px;
+    height: 100px;
+    position: relative;
+}
+
+.site-header:before
+{
+    content: "  ";
+    display: table;
+}
+
+.site-header:after
+{
+    content: "  ";
+    display: table;
+    clear: both;
+}
+
+.header-logo
+{
+    float: left;
+    width: 62px;
+    margin-top: 22px;
+}
+
+.header-logo .logo
+{
+    position: relative;
+    width: 55px;
+    height: 55px;
+    background-color: #ff6700;
+    overflow: hidden;
+    text-indent:-9999em;
+    text-align: left;
+    display: block;
+    /*left: 0px;*/
+    /*right:0px;*/
+}
+
+.logo:before
+{
+    background: url("https://s01.mifile.cn/i/mi-logo.png") no-repeat;
+    width: 55px;
+    height: 55px;
+    position: absolute;
+    left: 0px;
+    top: 0px;
+
+    content: ' ';
+}
+
+.site-nav
+{
+    float: left;
+    width: 850px;
+    /*margin-top: 12px;*/
+    height: 100px;
+
+}
+
+.nav-list
+{
+    margin: 0px 0px;
+    width: 820px;
+    height: 88px;
+    padding-left:30px;
+    padding-top: 12px;
+}
+
+.clearfix:before
+{
+    content: ' ';
+    display: table;
+    clear: both;
+}
+.clearfix:after{
+    content: " ";
+    display: table;
+}
+
+.site-search
+{
+    float: left;
+    width: 296px;
+    margin-top: 22px;
+}
+
+.J_navCategory
+{
+    float: left;
+    width: 127px;
+    height:88px;
+    padding-right: 15px;
+    /*display: block;*/
+}
+
+.site-category
+{
+    position: relative;
+    width: 234px;
+    height:460px;
+    top: 88px;
+    left: -92px;
+
+}
+
+.item
+{
+    float: left;
+    height: 88px;
+    width: 84px;
+    background-color: rebeccapurple;
+}
+.link
+{
+    padding:26px 10px 38px;
+    height: 24px;
+    width: 64px;
+    display: block;
+}
+
+.nav-item-active
+{
+
+}
+
+.header-nav-menu
+{
+    background-color: #ffffff;
+    width: 100%;
+    height: 229px;
+    left: 0px;
+    position: absolute;
+    top: 100px;
+    display: none;
+    z-index: 0;
+
+}
+
+.childern-list
+{
+    margin: 0px;
+    padding: 0px;
+}
+
+.childern-list li
+{
+    float: left;
+    position: relative;
+    width: 180px;
+    height: 166px;
+    padding: 35px 12px 0px;
+}
+
+.childern-list .figure-thumb
+{
+    width: 160px;
+    height: 110px;
+    margin: 0px auto 16px;
+}
+
+.header-nav-menu .childern-list li:before
+{
+    width: 1px;
+    height:100px;
+    left: 0px;
+    position: absolute;
+    /*margin-top: 35px;*/
+    content: "  ";
+    background-color: #e0e0e0;
+}
+
+.text
+{
+    background-color: green;
+}

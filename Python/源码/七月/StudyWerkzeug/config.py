@@ -8,7 +8,7 @@ class Config(object):
     MAX_CONTENT_LENGTH = 16 * 1024 * 1024
     UPLOAD_FOLDER = 'app/static/uploads/'
     ALLOWED_EXTENSIONS = set(['txt', 'pdf', 'png', 'jpg', 'jpeg', 'gif'])
-
+    SQLALCHEMY_POOL_SIZE = 10
     @staticmethod
     def init_app(app):
         pass
